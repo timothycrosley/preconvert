@@ -2,8 +2,8 @@ import base64
 from datetime import date, datetime, timedelta
 from decimal import Decimal
 from enum import Enum
-from typing import Any, Collection, Dict, Mapping, Union
 from types import GeneratorType
+from typing import Any, Collection, Dict, Mapping, Union
 from uuid import UUID
 
 from preconvert import register
@@ -32,6 +32,7 @@ if dataclasses_loaded:
             return dataclasses.asdict(instance)
         else:
             raise Unconvertable(instance)
+
 
 register.converter(Collection)(list)
 register.converter(GeneratorType)(tuple)
