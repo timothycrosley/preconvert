@@ -14,6 +14,71 @@ allowing you to easily then serialize into multiple formats.
 Have you ever tried to `json.dumps` a data structure, only to be surprised when your DataClass throws an exception, or your namedtuple outputs as a list?
 Preconvert was created to solve this problem across common serialization formats.
 
+
+Before Preconvert:
+
+```python
+import sys
+import json
+from dataclasses import dataclass
+
+
+@dataclass
+class InventoryItem:
+    """Class for keeping track of an item in inventory."""
+    name: str
+    unit_price: float
+    quantity_on_hand: int = 0
+
+    def total_cost(self) -> float:
+        return self.unit_price * self.quantity_on_hand
+
+
+my_store_inventory = [InventoryItem("beer", unit_price=0.0, quantity_on_hand=sys.maxsize),  InventoryItem("bacon", unit_price=2.5, quantity_on_hand=3)]
+json.dumps(my_store_inventory)
+
+output >>>
+
+    177
+    178
+--> 179         raise TypeError(f'Object of type {o.__class__.__name__} '
+    180                         f'is not JSON serializable')
+    181
+
+TypeError: Object of type InventoryItem is not JSON serializable
+
+D:
+```
+
+After preconvert:
+
+```python
+import sys
+import json
+from preconvert.output import json
+
+
+@dataclass
+class InventoryItem:
+    """Class for keeping track of an item in inventory."""
+    name: str
+    unit_price: float
+    quantity_on_hand: int = 0
+
+    def total_cost(self) -> float:
+        return self.unit_price * self.quantity_on_hand
+
+
+my_store_inventory = [InventoryItem("beer", unit_price=0.0, quantity_on_hand=sys.maxsize),  InventoryItem("bacon", unit_price=2.5, quantity_on_hand=3)]
+json.dumps(my_store_inventory)
+
+output >>>
+
+'[{"name": "beer", "unit_price": 0.0, "quantity_on_hand": 9223372036854775807}, {"name": "bacon", "unit_price": 2.5, "quantity_on_hand": 3}]'
+
+:D
+```
+
 ## Design goals:
 
 - Enable conversion from complex to simple types independant of desired output format
