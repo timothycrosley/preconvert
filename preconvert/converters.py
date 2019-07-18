@@ -3,7 +3,7 @@ from datetime import date, datetime, timedelta
 from decimal import Decimal
 from enum import Enum
 from types import GeneratorType
-from typing import Any, Collection, Dict, Mapping, Union
+from typing import Any, Collection, Dict, Mapping, NamedTuple, Union
 from uuid import UUID
 
 from preconvert import register
@@ -63,6 +63,7 @@ def use_value_attribute(item):
     return item.value
 
 
+@register.convert(NamedTuple)
 def convert_namedtuple(instance: Any) -> Union[Dict, tuple]:
     """Converts a tuple of type namedtuple to a dict.
        This isn't registered as injecting this via registration won't work because it will never be
