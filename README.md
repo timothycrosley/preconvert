@@ -18,8 +18,8 @@ Preconvert was created to solve this problem across common serialization formats
 
 - Enable conversion from complex to simple types independant of desired output format
 - Provide built in conversion for common types that are not universally supported (dataclasses, namedtuple, etc...)
-- Provide a way to build custom preconverters or override built-in preconverters
-- Ability to build preconverters that are dependent on the destination format
+- Provide a way to build custom preconverts or override built-in preconverts
+- Ability to build preconverts that are dependent on the destination format
 - Easy utilization from existing projects
 
 # How do I use this?
@@ -70,13 +70,13 @@ class MyCustomClass(object):
         return {'first': self.first_name, 'children': children}
 ```
 
-For other entities, such as objects you do not control, you can register a new preconverter using the `preconverter.converter` decorator:
+For other entities, such as objects you do not control, you can register a new preconvert using the `preconvert.converter` decorator:
 
 ```python
-import preconverter
+import preconvert
 
 
-@preconverter.converter(SomeFrameworkObject)
+@preconvert.converter(SomeFrameworkObject)
 def convert_framework_object(instance):
     return {'name': instance.name}
 ```
@@ -84,15 +84,15 @@ def convert_framework_object(instance):
 You can also, optionally, specify preconversions per an intended serialization format:
 
 ```python
-import preconverter
+import preconvert
 
 
-@preconverter.json(SomeFrameworkObject)
+@preconvert.json(SomeFrameworkObject)
 def convert_framework_object(instance):
     return {'json': {'name': instance.name}}
 
 
-@preconverter.msgpack(SomeFrameworkObject)
+@preconvert.msgpack(SomeFrameworkObject)
 def convert_framework_object(instance):
     return ['name', instance.name]
 ```
