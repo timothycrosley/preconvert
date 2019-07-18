@@ -86,6 +86,7 @@ output >>>
 - Provide a way to build custom preconverts or override built-in preconverts
 - Ability to build preconverts that are dependent on the destination format
 - Easy utilization from existing projects
+- Minimal overhead when utilized with common serialization formats
 
 # How do I use this?
 
