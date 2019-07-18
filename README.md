@@ -72,9 +72,7 @@ class InventoryItem:
 my_store_inventory = [InventoryItem("beer", unit_price=0.0, quantity_on_hand=sys.maxsize),  InventoryItem("bacon", unit_price=2.5, quantity_on_hand=3)]
 json.dumps(my_store_inventory)
 
-output >>>
-
-'[{"name": "beer", "unit_price": 0.0, "quantity_on_hand": 9223372036854775807}, {"name": "bacon", "unit_price": 2.5, "quantity_on_hand": 3}]'
+>>> '[{"name": "beer", "unit_price": 0.0, "quantity_on_hand": 9223372036854775807}, {"name": "bacon", "unit_price": 2.5, "quantity_on_hand": 3}]'
 
 :D
 ```
