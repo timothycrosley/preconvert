@@ -63,7 +63,7 @@ def use_value_attribute(item):
     return item.value
 
 
-@register.convert(NamedTuple)
+@register.converter(NamedTuple)
 def convert_namedtuple(instance: Any) -> Union[Dict, tuple]:
     """Converts a tuple of type namedtuple to a dict.
        This isn't registered as injecting this via registration won't work because it will never be
