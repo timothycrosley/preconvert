@@ -117,7 +117,7 @@ If not you can inject preconvert before usage of any other serializers, often by
 import preconvert
 import my_serializer
 
-my_serializer.dumps(default=preconvert.unserializable)
+my_serializer.dumps(default=preconvert.default_serializable)
 ```
 
 # How do I extend this?
