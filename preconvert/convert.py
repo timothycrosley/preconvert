@@ -14,7 +14,7 @@ class PreconversionSource(Enum):
     PRECONVERT = 2
 
 
-def unserializable(
+def default_serializer(
     item: Any,
     namespace: Text = "base",
     base_namespace: Text = "base",
@@ -33,11 +33,15 @@ def unserializable(
 
     if base_namespace and namespace != base_namespace:
         preconverters = ChainMap(
-            ChainMap(package_store.get(namespace, {}), package_store["base"])
-            for package_store in package_stores
+            *(
+                ChainMap(package_store.get(namespace, {}), package_store["base"])
+                for package_store in package_stores
+            )
         ).items()
     else:
-        preconverters = ChainMap(store[base_namespace] for package_store in package_stores).items()
+        preconverters = ChainMap(
+            *(store[base_namespace] for package_store in package_stores)
+        ).items()
 
     for kind, transformer in reversed(tuple(preconverters)):
         if isinstance(item, kind):
@@ -49,6 +53,6 @@ def unserializable(
     raise Unconvertable(item)
 
 
-json = partial(unserializable, namespace="json")
-bson = partial(unserializable, namespace="bson")
-msgpack = partial(unserializable, namespace="msgpack")
+json = partial(default_serializer, namespace="json")
+bson = partial(default_serializer, namespace="bson")
+msgpack = partial(default_serializer, namespace="msgpack")

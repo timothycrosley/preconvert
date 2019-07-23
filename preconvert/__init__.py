@@ -2,7 +2,7 @@
 __version__ = "0.0.2"
 
 from preconvert import convert, exceptions, output
-from preconvert.convert import unserializable
+from preconvert.convert import default_serializer
 from preconvert.register import bson, converter, json, msgpack
 
 __all__ = [
