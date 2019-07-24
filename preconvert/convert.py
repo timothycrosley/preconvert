@@ -21,8 +21,8 @@ def default_serializer(
     using: Union[Sequence[Text], PreconversionSource] = PreconversionSource.ALL_PACKAGES,
     store: Dict[Text, Dict[Text, Dict[Any, Callable]]] = converters,
 ):
-    if hasattr(item, "__native_types__"):
-        return item.__native_types__()
+    if hasattr(item, "__jsonifiable__"):
+        return item.__jsonifiable__()
 
     if using == PreconversionSource.ALL_PACKAGES:
         package_stores = store.values()

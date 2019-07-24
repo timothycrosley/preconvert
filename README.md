@@ -122,7 +122,7 @@ my_serializer.dumps(default=preconvert.default_serializable)
 
 # How do I extend this?
 
-Want to add preconversion to your own custom types? For OOP projects, one easy way to do this is to add a `__native_types__` method to your object:
+Want to add preconversion to your own custom types? For OOP projects, one easy way to do this is to add a `__jsonifiable__` method to your object:
 
 ```python
 class MyCustomClass(object):
@@ -130,7 +130,7 @@ class MyCustomClass(object):
         self.first_name = first_name
         self.children = children
 
-    def __native_types__(self)
+    def __jsonifiable__(self)
         return {'first': self.first_name, 'children': children}
 ```
 
