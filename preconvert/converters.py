@@ -16,14 +16,6 @@ try:
 except ImportError:
     dataclasses_loaded = False
 
-try:
-    import numpy
-
-    numpy_loaded = True
-except ImportError:
-    numpy_loaded = False
-
-
 if dataclasses_loaded:
 
     @register.converter(object)
@@ -75,30 +67,3 @@ def convert_namedtuple(instance: Any) -> Union[Dict, tuple]:
         return instance._asdict()
 
     return instance
-
-
-if numpy_loaded:
-
-    @register.converter(numpy.ndarray)
-    def numpy_listable(item):
-        return item.tolist()
-
-    @register.converter(str, numpy.unicode_)
-    def numpy_stringable(item):
-        return str(item)
-
-    @register.converter(numpy.bytes_)
-    def numpy_byte_decodeable(item):
-        return item.decode()
-
-    @register.converter(numpy.bool_)
-    def numpy_boolable(item):
-        return bool(item)
-
-    @register.converter(numpy.integer)
-    def numpy_integerable(item):
-        return int(item)
-
-    @register.converter(float, numpy.floating)
-    def numpy_floatable(item):
-        return float(item)
