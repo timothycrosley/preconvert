@@ -19,7 +19,7 @@ class AutoPackage(Enum):
 def converter(
     *kinds: Any,
     scope: Text = "base",
-    store: Dict[Text, Dict[Text, Callable]] = converters,
+    store: Dict[Text, Dict[Text, Dict[Text, Callable]]] = converters,
     override: bool = False,
     package: Union[Text, AutoPackage] = AutoPackage.FUNCTION_OR_PRECONVERT,
 ) -> Callable:

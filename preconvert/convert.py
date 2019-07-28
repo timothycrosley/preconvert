@@ -1,7 +1,7 @@
 from collections import ChainMap
 from enum import Enum
 from functools import partial
-from typing import Any, Callable, Dict, Sequence, Text, Union
+from typing import Any, Callable, Dict, Iterable, Text, Union
 
 from preconvert.exceptions import Unconvertable
 from preconvert.register import converters
@@ -18,17 +18,18 @@ def default_serializer(
     item: Any,
     namespace: Text = "base",
     base_namespace: Text = "base",
-    using: Union[Sequence[Text], PreconversionSource] = PreconversionSource.ALL_PACKAGES,
+    using: Union[Iterable[Text], PreconversionSource] = PreconversionSource.ALL_PACKAGES,
     store: Dict[Text, Dict[Text, Dict[Any, Callable]]] = converters,
 ):
     if hasattr(item, "__jsonifiable__"):
         return item.__jsonifiable__()
 
+    package_stores: Any
     if using == PreconversionSource.ALL_PACKAGES:
         package_stores = store.values()
     elif using == PreconversionSource.PRECONVERT:
         package_stores = (store["preconvert"],)
-    else:
+    elif isinstance(using, Iterable):
         package_stores = tuple(store[use_package] for use_package in using)
 
     if base_namespace and namespace != base_namespace:
