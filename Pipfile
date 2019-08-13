@@ -18,6 +18,7 @@ pytest = "*"
 e1839a8 = {path = "."}
 mkdocs = "*"
 pdoc3 = "*"
+simplejson = "*"
 
 [requires]
 python_version = "3.7"
