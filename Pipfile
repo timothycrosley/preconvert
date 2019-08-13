@@ -19,6 +19,7 @@ e1839a8 = {path = "."}
 mkdocs = "*"
 pdoc3 = "*"
 simplejson = "*"
+msgpack = "*"
 
 [requires]
 python_version = "3.7"
