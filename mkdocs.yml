@@ -3,9 +3,9 @@ theme: readthedocs
 nav:
     - Home: index.md
     - Reference:
-        - reference/__auto__/preconvert.md
-        - reference/__auto__/preconvert.convert.md
-        - reference/__auto__/preconvert.converters.md
-        - reference/__auto__/preconvert.exceptions.md
-        - reference/__auto__/preconvert.register.md
-        - reference/__auto__/preconvert.output.md
+        - __auto__/preconvert.md
+        - __auto__/preconvert.convert.md
+        - __auto__/preconvert.converters.md
+        - __auto__/preconvert.exceptions.md
+        - __auto__/preconvert.register.md
+        - __auto__/preconvert.output.md
