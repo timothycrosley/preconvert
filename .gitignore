@@ -78,3 +78,7 @@ venv/
 
 # VSCode
 /.vscode
+
+# Automatically generated files
+docs/__auto__
+site/
