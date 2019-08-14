@@ -67,7 +67,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../preconvert.converters.md">None</a>
+    <a class="" href="../preconvert.converters/">Preconvert.converters</a>
                 </li>
                 <li class="">
                     
@@ -137,7 +137,7 @@
                 <h1 id="module-preconvertregister">Module preconvert.register</h1>
 <p>This module handles the registration of preconverters</p>
 <h2 id="functions">Functions</h2>
-<p><code>converter(*kinds, scope='base', store={'preconvert': {'base': {&lt;class 'object'&gt;: &lt;function convert_data_class at 0x7fe269b1a730&gt;, typing.Collection: &lt;class 'list'&gt;, &lt;class 'generator'&gt;: &lt;class 'tuple'&gt;, typing.Mapping: &lt;class 'dict'&gt;, &lt;class 'decimal.Decimal'&gt;: &lt;class 'str'&gt;, &lt;class 'uuid.UUID'&gt;: &lt;class 'str'&gt;, &lt;class 'bytes'&gt;: &lt;function byte_converter at 0x7fe269b1a7b8&gt;, &lt;class 'datetime.date'&gt;: &lt;function datetime_converter at 0x7fe269b1a840&gt;, &lt;class 'datetime.datetime'&gt;: &lt;function datetime_converter at 0x7fe269b1a840&gt;, &lt;class 'datetime.timedelta'&gt;: &lt;function time_delta_converter at 0x7fe269b1a8c8&gt;, &lt;enum 'Enum'&gt;: &lt;function use_value_attribute at 0x7fe269b1a950&gt;, &lt;class 'typing.NamedTuple'&gt;: &lt;function convert_namedtuple at 0x7fe269b1a9d8&gt;}}}, override=False, package=&lt;AutoPackage.FUNCTION_OR_PRECONVERT: 3&gt;)</code>
+<p><code>converter(*kinds, scope='base', store={'preconvert': {'base': {&lt;class 'object'&gt;: &lt;function convert_data_class at 0x7f74fe400730&gt;, typing.Collection: &lt;class 'list'&gt;, &lt;class 'generator'&gt;: &lt;class 'tuple'&gt;, typing.Mapping: &lt;class 'dict'&gt;, &lt;class 'decimal.Decimal'&gt;: &lt;class 'str'&gt;, &lt;class 'uuid.UUID'&gt;: &lt;class 'str'&gt;, &lt;class 'bytes'&gt;: &lt;function byte_converter at 0x7f74fe4007b8&gt;, &lt;class 'datetime.date'&gt;: &lt;function datetime_converter at 0x7f74fe400840&gt;, &lt;class 'datetime.datetime'&gt;: &lt;function datetime_converter at 0x7f74fe400840&gt;, &lt;class 'datetime.timedelta'&gt;: &lt;function time_delta_converter at 0x7f74fe4008c8&gt;, &lt;enum 'Enum'&gt;: &lt;function use_value_attribute at 0x7f74fe400950&gt;, &lt;class 'typing.NamedTuple'&gt;: &lt;function convert_namedtuple at 0x7f74fe4009d8&gt;}}}, override=False, package=&lt;AutoPackage.FUNCTION_OR_PRECONVERT: 3&gt;)</code>
 :   A decorator that registers the wrapped function as a pre-converter for the provided types
     in the provided <code>store</code> data structure or a default global one.</p>
 <pre><code>Returns the decorated function unchanged.
