@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Preconvert.bson - preconvert</title>
+  <title>Preconvert.output - preconvert</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Preconvert.bson";
-    var mkdocs_page_input_path = "__auto__/preconvert.bson.md";
+    var mkdocs_page_name = "Preconvert.output";
+    var mkdocs_page_input_path = "__auto__/preconvert.output.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -106,7 +106,7 @@
     
       
     
-    <li>Preconvert.bson</li>
+    <li>Preconvert.output</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -116,7 +116,18 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="module-preconvertoutput">Module preconvert.output</h1>
+<p>Exposes all output formatters that have built-in support for preconversion</p>
+<p>Note: the interesting try: catch: pattern is done as their isn't a guarantee that the user has
+any of the given output formatters installed, which is required for preconvert to plug-in
+it's preconversion.</p>
+<h2 id="sub-modules">Sub-modules</h2>
+<ul>
+<li>preconvert.output.bson</li>
+<li>preconvert.output.json</li>
+<li>preconvert.output.msgpack</li>
+<li>preconvert.output.simplejson</li>
+</ul>
               
             </div>
           </div>

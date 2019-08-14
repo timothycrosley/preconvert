@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Preconvert.bson - preconvert</title>
+  <title>Preconvert.exceptions - preconvert</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Preconvert.bson";
-    var mkdocs_page_input_path = "__auto__/preconvert.bson.md";
+    var mkdocs_page_name = "Preconvert.exceptions";
+    var mkdocs_page_input_path = "__auto__/preconvert.exceptions.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -106,7 +106,7 @@
     
       
     
-    <li>Preconvert.bson</li>
+    <li>Preconvert.exceptions</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -116,7 +116,37 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="module-preconvertexceptions">Module preconvert.exceptions</h1>
+<p>Defines all exceptions that can be thrown by the preconvert project</p>
+<h2 id="classes">Classes</h2>
+<p><code>Error(*args, **kwargs)</code>
+:   Base class for exceptions thrown from the preconvert project</p>
+<pre><code>### Ancestors (in MRO)
+
+* builtins.Exception
+* builtins.BaseException
+
+### Descendants
+
+* preconvert.exceptions.ExistingConverter
+* preconvert.exceptions.Unconvertable
+</code></pre>
+<p><code>ExistingConverter(kind, existing, new)</code>
+:   Should be raised when a converter already exists for a specified type</p>
+<pre><code>### Ancestors (in MRO)
+
+* preconvert.exceptions.Error
+* builtins.Exception
+* builtins.BaseException
+</code></pre>
+<p><code>Unconvertable(item)</code>
+:   Raised when the provided item is not convertable using the provided converter(s)</p>
+<pre><code>### Ancestors (in MRO)
+
+* preconvert.exceptions.Error
+* builtins.Exception
+* builtins.BaseException
+</code></pre>
               
             </div>
           </div>

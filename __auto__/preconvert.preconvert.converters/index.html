@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Preconvert.bson - preconvert</title>
+  <title>Preconvert.preconvert.converters - preconvert</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Preconvert.bson";
-    var mkdocs_page_input_path = "__auto__/preconvert.bson.md";
+    var mkdocs_page_name = "Preconvert.preconvert.converters";
+    var mkdocs_page_input_path = "__auto__/preconvert.preconvert.converters.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -106,7 +106,7 @@
     
       
     
-    <li>Preconvert.bson</li>
+    <li>Preconvert.preconvert.converters</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -116,7 +116,24 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="module-preconvertconverters">Module preconvert.converters</h1>
+<h2 id="functions">Functions</h2>
+<p><code>byte_converter(item)</code>
+:   </p>
+<p><code>convert_data_class(instance)</code>
+:   </p>
+<p><code>convert_namedtuple(instance)</code>
+:   Converts a tuple of type namedtuple to a dict.
+    This isn't registered as injecting this via registration won't work because it will never be
+    falling through to as tuples convert to list.</p>
+<pre><code>if the tuple isn't a named one, it will return the tuple unchanged
+</code></pre>
+<p><code>datetime_converter(item)</code>
+:   </p>
+<p><code>time_delta_converter(item)</code>
+:   </p>
+<p><code>use_value_attribute(item)</code>
+:</p>
               
             </div>
           </div>
