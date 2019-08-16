@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Preconvert.bson - preconvert</title>
+  <title>Exceptions - preconvert</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Preconvert.bson";
-    var mkdocs_page_input_path = "__auto__/preconvert.bson.md";
+    var mkdocs_page_name = "Exceptions";
+    var mkdocs_page_input_path = "preconvert/exceptions.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -59,27 +59,55 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../preconvert/">Preconvert</a>
+    <a class="" href="../">Preconvert</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../preconvert.convert/">Preconvert.convert</a>
+    <a class="" href="../convert/">Convert</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../preconvert.converters/">Preconvert.converters</a>
+    <a class="" href="../converters/">Converters</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Exceptions</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#module-preconvertexceptions">Module preconvert.exceptions</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#classes">Classes</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
-    <a class="" href="../preconvert.exceptions/">Preconvert.exceptions</a>
+    <a class="" href="../register/">Register</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../preconvert.register/">Preconvert.register</a>
+    <a class="" href="../output/">Output</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../preconvert.output/">Preconvert.output</a>
+    <a class="" href="../output/json/">JSON</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../output/simplejson/">SimpleJSON</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../output/msgpack/">MsgPack</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../output/bson/">BSON</a>
                 </li>
     </ul>
 	    </li>
@@ -105,8 +133,12 @@
     <li><a href="../..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Reference &raquo;</li>
+        
+      
     
-    <li>Preconvert.bson</li>
+    <li>Exceptions</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -116,11 +148,56 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="module-preconvertexceptions">Module preconvert.exceptions</h1>
+<p>Defines all exceptions that can be thrown by the preconvert project</p>
+<h2 id="classes">Classes</h2>
+<pre><code class="python3">Error(*args, **kwargs)
+</code></pre>
+
+<p>:   Base class for exceptions thrown from the preconvert project</p>
+<pre><code>### Ancestors (in MRO)
+
+* builtins.Exception
+* builtins.BaseException
+
+### Descendants
+
+* preconvert.exceptions.ExistingConverter
+* preconvert.exceptions.Unconvertable
+</code></pre>
+<pre><code class="python3">ExistingConverter(kind, existing, new)
+</code></pre>
+
+<p>:   Should be raised when a converter already exists for a specified type</p>
+<pre><code>### Ancestors (in MRO)
+
+* preconvert.exceptions.Error
+* builtins.Exception
+* builtins.BaseException
+</code></pre>
+<pre><code class="python3">Unconvertable(item)
+</code></pre>
+
+<p>:   Raised when the provided item is not convertable using the provided converter(s)</p>
+<pre><code>### Ancestors (in MRO)
+
+* preconvert.exceptions.Error
+* builtins.Exception
+* builtins.BaseException
+</code></pre>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../register/" class="btn btn-neutral float-right" title="Register">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../converters/" class="btn btn-neutral" title="Converters"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -144,6 +221,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
+        <span><a href="../converters/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../register/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Preconvert.msgpack - preconvert</title>
+  <title>Converters - preconvert</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Preconvert.msgpack";
-    var mkdocs_page_input_path = "__auto__/preconvert.msgpack.md";
+    var mkdocs_page_name = "Converters";
+    var mkdocs_page_input_path = "preconvert/converters.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -59,27 +59,55 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../preconvert/">Preconvert</a>
+    <a class="" href="../">Preconvert</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../preconvert.convert/">Preconvert.convert</a>
+    <a class="" href="../convert/">Convert</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Converters</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#module-preconvertconverters">Module preconvert.converters</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#functions">Functions</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
-    <a class="" href="../preconvert.converters/">Preconvert.converters</a>
+    <a class="" href="../exceptions/">Exceptions</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../preconvert.exceptions/">Preconvert.exceptions</a>
+    <a class="" href="../register/">Register</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../preconvert.register/">Preconvert.register</a>
+    <a class="" href="../output/">Output</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../preconvert.output/">Preconvert.output</a>
+    <a class="" href="../output/json/">JSON</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../output/simplejson/">SimpleJSON</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../output/msgpack/">MsgPack</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../output/bson/">BSON</a>
                 </li>
     </ul>
 	    </li>
@@ -105,8 +133,12 @@
     <li><a href="../..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Reference &raquo;</li>
+        
+      
     
-    <li>Preconvert.msgpack</li>
+    <li>Converters</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -116,11 +148,60 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="module-preconvertconverters">Module preconvert.converters</h1>
+<h2 id="functions">Functions</h2>
+<h5 id="byte_converter">byte_converter</h5>
+<pre><code class="python3">def (
+    item
+)
+</code></pre>
+
+<h5 id="convert_data_class">convert_data_class</h5>
+<pre><code class="python3">def (
+    instance
+)
+</code></pre>
+
+<h5 id="convert_namedtuple">convert_namedtuple</h5>
+<pre><code class="python3">def (
+    instance: Any
+) -&gt; Union[Dict, tuple]
+</code></pre>
+
+<p>nverts a tuple of type namedtuple to a dict.
+This isn't registered as injecting this via registration won't work because it will never be
+falling through to as tuples convert to list.</p>
+<p>if the tuple isn't a named one, it will return the tuple unchanged</p>
+<h5 id="datetime_converter">datetime_converter</h5>
+<pre><code class="python3">def (
+    item
+)
+</code></pre>
+
+<h5 id="time_delta_converter">time_delta_converter</h5>
+<pre><code class="python3">def (
+    item
+)
+</code></pre>
+
+<h5 id="use_value_attribute">use_value_attribute</h5>
+<pre><code class="python3">def (
+    item
+)
+</code></pre>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../exceptions/" class="btn btn-neutral float-right" title="Exceptions">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../convert/" class="btn btn-neutral" title="Convert"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -144,6 +225,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
+        <span><a href="../convert/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../exceptions/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

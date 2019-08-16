@@ -7,23 +7,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Preconvert.json - preconvert</title>
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>BSON - preconvert</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Preconvert.json";
-    var mkdocs_page_input_path = "__auto__/preconvert.json.md";
+    var mkdocs_page_name = "BSON";
+    var mkdocs_page_input_path = "preconvert/output/bson.md";
     var mkdocs_page_url = null;
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
@@ -36,9 +36,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> preconvert</a>
+        <a href="../../.." class="icon icon-home"> preconvert</a>
         <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
@@ -50,7 +50,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../..">Home</a>
+    <a class="" href="../../..">Home</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -59,27 +59,55 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../preconvert/">Preconvert</a>
+    <a class="" href="../../">Preconvert</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../preconvert.convert/">Preconvert.convert</a>
+    <a class="" href="../../convert/">Convert</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../preconvert.converters/">Preconvert.converters</a>
+    <a class="" href="../../converters/">Converters</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../preconvert.exceptions/">Preconvert.exceptions</a>
+    <a class="" href="../../exceptions/">Exceptions</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../preconvert.register/">Preconvert.register</a>
+    <a class="" href="../../register/">Register</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../preconvert.output/">Preconvert.output</a>
+    <a class="" href="../">Output</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../json/">JSON</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../simplejson/">SimpleJSON</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../msgpack/">MsgPack</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">BSON</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#module-preconvertoutputbson">Module preconvert.output.bson</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#functions">Functions</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -94,7 +122,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">preconvert</a>
+        <a href="../../..">preconvert</a>
       </nav>
 
       
@@ -102,11 +130,15 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../..">Docs</a> &raquo;</li>
+    <li><a href="../../..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Reference &raquo;</li>
+        
+      
     
-    <li>Preconvert.json</li>
+    <li>BSON</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -116,11 +148,39 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="module-preconvertoutputbson">Module preconvert.output.bson</h1>
+<h2 id="functions">Functions</h2>
+<h5 id="dump">dump</h5>
+<pre><code class="python3">def (
+    content,
+    *args,
+    on_unknown=functools.partial(&lt;function default_serializer at 0x7f440fe9ed08&gt;, namespace='bson'),
+    **kwargs
+)
+</code></pre>
+
+<p>ON dump with preconversion for common unserializable types in place</p>
+<h5 id="dumps">dumps</h5>
+<pre><code class="python3">def (
+    content,
+    *args,
+    on_unknown=functools.partial(&lt;function default_serializer at 0x7f440fe9ed08&gt;, namespace='bson'),
+    **kwargs
+)
+</code></pre>
+
+<p>ON dumps with preconversion for common unserializable types in place</p>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../msgpack/" class="btn btn-neutral" title="MsgPack"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -144,12 +204,14 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
+        <span><a href="../msgpack/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
       
     </span>
 </div>
-    <script>var base_url = '../..';</script>
-    <script src="../../js/theme.js" defer></script>
-      <script src="../../search/main.js" defer></script>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
 
 </body>
 </html>
