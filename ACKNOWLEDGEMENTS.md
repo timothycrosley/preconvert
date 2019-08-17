@@ -1,17 +1,16 @@
-Core Developers
+Contributors
 ===================
+
+## Core Developers
 - Timothy Edmund Crosley (@timothycrosley)
 
-Notable Bug Reporters
-===================
+## Notable Bug Reporters
 -
 
-Code Contributors
-===================
+## Code Contributors
 -
 
-Documenters
-===================
+## Documenters
 -
 
 --------------------------------------------

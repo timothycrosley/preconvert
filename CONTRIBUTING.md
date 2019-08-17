@@ -5,8 +5,7 @@ Looking for a useful open source project to contribute to?
 Want your contributions to be warmly welcomed and acknowledged?
 Welcome! You have found the right place.
 
-Getting preconvert set up for local development
-=========
+## Getting preconvert set up for local development
 The first step when contributing to any project is getting it set up on your local machine. preconvert aims to make this as simple as possible.
 
 Account Requirements:
@@ -29,8 +28,7 @@ Once you have verified that you system matches the base requirements you can sta
 
 Install preconvert itself with `pip install .` or `pip install -e .` (for editable mode).
 
-Making a contribution
-=========
+## Making a contribution
 Congrats! You're now ready to make a contribution! Use the following as a guide to help you reach a successful pull-request:
 
 1. Check the [issues page](https://github.com/timothycrosley/preconvert/issues) on GitHub to see if the task you want to complete is listed there.
@@ -44,8 +42,7 @@ Congrats! You're now ready to make a contribution! Use the following as a guide 
 
 Thanks for the contribution! It will quickly get reviewed, and, once accepted, will result in your name being added to the ACKNOWLEDGEMENTS.md list :).
 
-Thank you!
-=========
+## Thank you!
 I can not tell you how thankful I am for the hard work done by preconvert contributors like *you*.
 
 Thank you!
