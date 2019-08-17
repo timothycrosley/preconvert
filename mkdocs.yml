@@ -10,6 +10,7 @@ theme:
 nav:
     - Home: index.md
     - Contributing: CONTRIBUTING.md
+    - Changelog: CHANGELOG.md
     - Reference:
         - Preconvert: 'preconvert/index.md'
         - Convert: 'preconvert/convert.md'
