@@ -11,6 +11,7 @@ nav:
     - Home: index.md
     - Contributing: CONTRIBUTING.md
     - Changelog: CHANGELOG.md
+    - Acknowledgements: ACKNOWLEDGEMENTS.md
     - Reference:
         - Preconvert: 'preconvert/index.md'
         - Convert: 'preconvert/convert.md'
