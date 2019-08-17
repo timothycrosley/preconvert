@@ -35,8 +35,12 @@ ${var.docstring | deflist}
 </%def>
 
 <%def name="class_(cls)" buffered="True">
+${"##### " + cls.name}
+
 ```python3
-${cls.name}(${", ".join(cls.params(annotate=show_type_annotations))})
+class (
+    ${",\n    ".join(cls.params(annotate=show_type_annotations))}
+)
 ```
 ${cls.docstring | deflist}
 <%
