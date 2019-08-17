@@ -230,9 +230,59 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Home
+      </label>
+    
     <a href="." title="Home" class="md-nav__link md-nav__link--active">
       Home
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why" title="Why?" class="md-nav__link">
+    Why?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-goals" title="Design goals:" class="md-nav__link">
+    Design goals:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-use-this" title="How do I use this?" class="md-nav__link">
+    How do I use this?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-extend-this" title="How do I extend this?" class="md-nav__link">
+    How do I extend this?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -482,6 +532,43 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why" title="Why?" class="md-nav__link">
+    Why?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-goals" title="Design goals:" class="md-nav__link">
+    Design goals:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-use-this" title="How do I use this?" class="md-nav__link">
+    How do I use this?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-extend-this" title="How do I extend this?" class="md-nav__link">
+    How do I extend this?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -500,7 +587,7 @@
 <p>Supercharge your serialization! Preconvert is a library that extends existing serializiers (json, simplejson, bson, msgpack, ..) to be capable of converting the types you use.
 It accomplishes this by efficiently preconverting just the types the serializers aren't aware of (things like dataclasses and namedtuples) into basic built-in types that all
 serializers can understand. It then provides a mechanism for you to build custom preconverters, and preconvert_plugins that automatically take effect when installed via pip.</p>
-<h1 id="why">Why?</h1>
+<h2 id="why">Why?</h2>
 <p>Have you ever tried to <code>json.dumps</code> a data structure, only to be surprised when your DataClass throws an exception, or your namedtuple outputs as a list?
 Preconvert was created to solve this problem across common serialization formats.</p>
 <p>Before Preconvert:</p>
@@ -572,7 +659,7 @@ Preconvert was created to solve this problem across common serialization formats
 <li>Easy utilization from existing projects</li>
 <li>Minimal overhead when utilized with common serialization formats</li>
 </ul>
-<h1 id="how-do-i-use-this">How do I use this?</h1>
+<h2 id="how-do-i-use-this">How do I use this?</h2>
 <ol>
 <li>Download</li>
 </ol>
@@ -597,7 +684,7 @@ you can simply replace your existing serializer import with a preconvert one:</p
 </pre></div>
 
 
-<h1 id="how-do-i-extend-this">How do I extend this?</h1>
+<h2 id="how-do-i-extend-this">How do I extend this?</h2>
 <p>Want to add preconversion to your own custom types? For OOP projects, one easy way to do this is to add a <code>__jsonifiable__</code> method to your object:</p>
 <div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">MyCustomClass</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">()):</span>
