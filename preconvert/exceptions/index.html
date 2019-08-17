@@ -373,15 +373,55 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ancestors-in-mro" title="Ancestors (in MRO)" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descendants" title="Descendants" class="md-nav__link">
+    Descendants
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#existingconverter" title="ExistingConverter" class="md-nav__link">
     ExistingConverter
   </a>
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro_1" title="Ancestors (in MRO)" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#unconvertable" title="Unconvertable" class="md-nav__link">
     Unconvertable
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro_2" title="Ancestors (in MRO)" class="md-nav__link">
+    Ancestors (in MRO)
   </a>
   
 </li>
@@ -515,15 +555,55 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ancestors-in-mro" title="Ancestors (in MRO)" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descendants" title="Descendants" class="md-nav__link">
+    Descendants
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#existingconverter" title="ExistingConverter" class="md-nav__link">
     ExistingConverter
   </a>
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro_1" title="Ancestors (in MRO)" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#unconvertable" title="Unconvertable" class="md-nav__link">
     Unconvertable
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro_2" title="Ancestors (in MRO)" class="md-nav__link">
+    Ancestors (in MRO)
   </a>
   
 </li>
@@ -554,58 +634,63 @@
 <p>Defines all exceptions that can be thrown by the preconvert project</p>
 <h2 id="classes">Classes</h2>
 <h5 id="error">Error</h5>
-<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="err">(</span>
+<dl>
+<dt><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="err">(</span>
     <span class="o">*</span><span class="n">args</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">)</span>
 </pre></div>
-
-
-<p>:   Base class for exceptions thrown from the preconvert project</p>
-<div class="codehilite"><pre><span></span><span class="o">###</span> <span class="n">Ancestors</span> <span class="p">(</span><span class="k">in</span> <span class="n">MRO</span><span class="p">)</span>
-
-<span class="o">*</span> <span class="n">builtins</span><span class="p">.</span><span class="k">Exception</span>
-<span class="o">*</span> <span class="n">builtins</span><span class="p">.</span><span class="n">BaseException</span>
-
-<span class="o">###</span> <span class="n">Descendants</span>
-
-<span class="o">*</span> <span class="n">preconvert</span><span class="p">.</span><span class="n">exceptions</span><span class="p">.</span><span class="n">ExistingConverter</span>
-<span class="o">*</span> <span class="n">preconvert</span><span class="p">.</span><span class="n">exceptions</span><span class="p">.</span><span class="n">Unconvertable</span>
-</pre></div>
-
-
+</dt>
+<dd>
+<p>Base class for exceptions thrown from the preconvert project</p>
+<h3 id="ancestors-in-mro">Ancestors (in MRO)</h3>
+<ul>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+<h3 id="descendants">Descendants</h3>
+<ul>
+<li>preconvert.exceptions.ExistingConverter</li>
+<li>preconvert.exceptions.Unconvertable</li>
+</ul>
+</dd>
+</dl>
 <h5 id="existingconverter">ExistingConverter</h5>
-<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="err">(</span>
+<dl>
+<dt><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="err">(</span>
     <span class="n">kind</span><span class="p">,</span>
     <span class="n">existing</span><span class="p">,</span>
     <span class="n">new</span>
 <span class="p">)</span>
 </pre></div>
-
-
-<p>:   Should be raised when a converter already exists for a specified type</p>
-<div class="codehilite"><pre><span></span><span class="o">###</span> <span class="n">Ancestors</span> <span class="p">(</span><span class="k">in</span> <span class="n">MRO</span><span class="p">)</span>
-
-<span class="o">*</span> <span class="n">preconvert</span><span class="p">.</span><span class="n">exceptions</span><span class="p">.</span><span class="n">Error</span>
-<span class="o">*</span> <span class="n">builtins</span><span class="p">.</span><span class="k">Exception</span>
-<span class="o">*</span> <span class="n">builtins</span><span class="p">.</span><span class="n">BaseException</span>
-</pre></div>
-
-
+</dt>
+<dd>
+<p>Should be raised when a converter already exists for a specified type</p>
+<h3 id="ancestors-in-mro_1">Ancestors (in MRO)</h3>
+<ul>
+<li>preconvert.exceptions.Error</li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+</dl>
 <h5 id="unconvertable">Unconvertable</h5>
-<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="err">(</span>
+<dl>
+<dt><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="err">(</span>
     <span class="n">item</span>
 <span class="p">)</span>
 </pre></div>
-
-
-<p>:   Raised when the provided item is not convertable using the provided converter(s)</p>
-<div class="codehilite"><pre><span></span><span class="o">###</span> <span class="n">Ancestors</span> <span class="p">(</span><span class="k">in</span> <span class="n">MRO</span><span class="p">)</span>
-
-<span class="o">*</span> <span class="n">preconvert</span><span class="p">.</span><span class="n">exceptions</span><span class="p">.</span><span class="n">Error</span>
-<span class="o">*</span> <span class="n">builtins</span><span class="p">.</span><span class="k">Exception</span>
-<span class="o">*</span> <span class="n">builtins</span><span class="p">.</span><span class="n">BaseException</span>
-</pre></div>
+</dt>
+<dd>
+<p>Raised when the provided item is not convertable using the provided converter(s)</p>
+<h3 id="ancestors-in-mro_2">Ancestors (in MRO)</h3>
+<ul>
+<li>preconvert.exceptions.Error</li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+</dl>
                 
                   
                 
