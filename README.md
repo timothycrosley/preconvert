@@ -1,4 +1,4 @@
-Preconvert
+preconvert
 ===================
 
 [![PyPI version](https://badge.fury.io/py/preconvert.svg)](http://badge.fury.io/py/preconvert)
