@@ -1,3 +1,5 @@
+[![Logo](https://raw.github.com/timothycrosley/preconvert/master/art/logo.png)](https://timothycrosley.github.io/preconvert/)
+
 preconvert
 ===================
 
