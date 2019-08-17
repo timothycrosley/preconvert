@@ -9,6 +9,7 @@ theme:
 
 nav:
     - Home: index.md
+    - Contributing: CONTRIBUTING.md
     - Reference:
         - Preconvert: 'preconvert/index.md'
         - Convert: 'preconvert/convert.md'
