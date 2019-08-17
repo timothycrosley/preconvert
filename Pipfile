@@ -4,6 +4,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+ipython = "*"
 
 [packages]
 black = "*"
@@ -21,6 +22,10 @@ pdoc3 = "*"
 simplejson = "*"
 msgpack = "*"
 bson = "*"
+pip = "*"
+install = "*"
+mkdocs-cinder = "*"
+mkdocs-material = "*"
 
 [requires]
 python_version = "3.7"

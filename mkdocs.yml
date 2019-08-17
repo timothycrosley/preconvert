@@ -1,5 +1,12 @@
 site_name: preconvert
-theme: readthedocs
+theme:
+    name: 'material'
+    palette:
+      primary: 'green'
+      accent: 'lightgreen'
+    logo: 'art/logo.png'
+    favicon: 'art/logo.png'
+
 nav:
     - Home: index.md
     - Reference:
@@ -13,3 +20,7 @@ nav:
         - SimpleJSON: 'preconvert/output/simplejson.md'
         - MsgPack: 'preconvert/output/msgpack.md'
         - BSON: 'preconvert/output/bson.md'
+
+markdown_extensions:
+  - admonition
+  - codehilite
