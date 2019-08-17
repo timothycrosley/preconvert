@@ -1,5 +1,5 @@
 import simplejson
-from funtools import partial
+from functools import partial
 from preconvert import convert
 from simplejson import *
 

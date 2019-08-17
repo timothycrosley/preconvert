@@ -78,3 +78,8 @@ venv/
 
 # VSCode
 /.vscode
+
+# Automatically generated files
+docs/preconvert
+site/
+out

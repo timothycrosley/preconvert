@@ -17,6 +17,6 @@ __all__ = [
     "exceptions",
     "convert",
     "output",
-    "unserializable",
+    "default_serializer",
     "__version__",
 ]

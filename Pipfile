@@ -4,6 +4,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+ipython = "*"
 
 [packages]
 black = "*"
@@ -15,7 +16,12 @@ bandit = "*"
 vulture = "*"
 flake8-bugbear = "==19.3.0"
 pytest = "*"
-e1839a8 = {path = "."}
+mkdocs = "*"
+pdoc3 = "*"
+simplejson = "*"
+msgpack = "*"
+bson = "*"
+mkdocs-material = "*"
 
 [requires]
 python_version = "3.7"
