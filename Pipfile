@@ -16,7 +16,6 @@ bandit = "*"
 vulture = "*"
 flake8-bugbear = "==19.3.0"
 pytest = "*"
-e1839a8 = {path = "."}
 mkdocs = "*"
 pdoc3 = "*"
 simplejson = "*"
@@ -24,7 +23,6 @@ msgpack = "*"
 bson = "*"
 pip = "*"
 install = "*"
-mkdocs-cinder = "*"
 mkdocs-material = "*"
 
 [requires]
