@@ -7,7 +7,7 @@ Supercharge your serialization! Preconvert is a library that extends existing se
 It accomplishes this by efficiently preconverting just the types the serializers aren't aware of (things like dataclasses and namedtuples) into basic built-in types that all
 serializers can understand. It then provides a mechanism for you to build custom preconverters, and preconvert_plugins that automatically take effect when installed via pip.
 
-# Why?
+## Why?
 
 Have you ever tried to `json.dumps` a data structure, only to be surprised when your DataClass throws an exception, or your namedtuple outputs as a list?
 Preconvert was created to solve this problem across common serialization formats.
@@ -84,7 +84,7 @@ json.dumps(my_store_inventory)
 - Easy utilization from existing projects
 - Minimal overhead when utilized with common serialization formats
 
-# How do I use this?
+## How do I use this?
 
 1. Download
 
@@ -118,7 +118,7 @@ import my_serializer
 my_serializer.dumps(default=preconvert.default_serializable)
 ```
 
-# How do I extend this?
+## How do I extend this?
 
 Want to add preconversion to your own custom types? For OOP projects, one easy way to do this is to add a `__jsonifiable__` method to your object:
 

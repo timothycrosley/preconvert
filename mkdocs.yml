@@ -7,11 +7,16 @@ theme:
     logo: 'art/logo.png'
     favicon: 'art/logo.png'
 
+repo_name: timothycrosley/preconvert
+repo_url: https://github.com/timothycrosley/preconvert
 nav:
     - Home: index.md
-    - Contributing: CONTRIBUTING.md
     - Changelog: CHANGELOG.md
     - Acknowledgements: ACKNOWLEDGEMENTS.md
+    - Contributing:
+        - 'Contributing Guide': 'CONTRIBUTING.md'
+        - 'Coding Standard': 'CODING_STANDARD.md'
+        - 'Code of Conduct': 'CODE_OF_CONDUCT.md'
     - Reference:
         - Preconvert: 'preconvert/index.md'
         - Convert: 'preconvert/convert.md'
@@ -27,3 +32,4 @@ nav:
 markdown_extensions:
   - admonition
   - codehilite
+  - extra
