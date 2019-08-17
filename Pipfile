@@ -21,8 +21,6 @@ pdoc3 = "*"
 simplejson = "*"
 msgpack = "*"
 bson = "*"
-pip = "*"
-install = "*"
 mkdocs-material = "*"
 
 [requires]
