@@ -24,8 +24,5 @@ bson = "*"
 mkdocs-material = "*"
 pytest-coverage = "*"
 
-[requires]
-python_version = ">=3.5"
-
 [pipenv]
 allow_prereleases = true
