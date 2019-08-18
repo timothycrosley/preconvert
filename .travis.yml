@@ -2,27 +2,22 @@ dist: xenial
 language: python
 cache: pip
 install:
-    - 'pip install pipenv'
-    - 'pipenv install'
+- pip install pipenv
+- pipenv install
 matrix:
-    include:
-        - os: linux
-          sudo: required
-          python: 3.5
-        - os: linux
-          sudo: required
-          python: 3.6
-        - os: linux
-          sudo: required
-          python: 3.7
-          env: DEPLOY=yes
-        - os: osx
-          language: generic
-          python: 3.7
+  include:
+  - os: linux
+    sudo: required
+    python: 3.6
+  - os: linux
+    sudo: required
+    python: 3.7
+    env: DEPLOY=yes
+  - os: osx
+    language: generic
+    python: 3.6
 script:
-    - bash test.sh
-
-
+- bash test.sh
 deploy:
   provider: pypi
   user: timothycrosley
@@ -33,5 +28,4 @@ deploy:
     branch: master
     condition: "$DEPLOY = yes"
   password:
-    secure: SSFcjBL3dhWvSbo21icmnHQFV7mXfv/eDzxrefHUDMk37MWrvtNKchH8zz7wjAsf2PH1VYL1zkEFwnzuzHgs2aFCK7HDUwAaDSIcvPmJg9Oty+o2WQw16m7UnUac9MIZGmBHQaZuUTw0VJpm3GuPSXtdFJwFq3Tk3TIyUipEwg8=
-
+    secure: mihb1FzC6ZiPSMA9SL/p3TyECW1S20TJanKkHH3ZeJf6fcAg6u/K6ToJLzMl3ny89vrkdMlmYTGyF5YFar3uQKWCjCN4I+Aj0M8q7yFcEsWp5HkSEmSNkzy2znSVY9SXCOcOjTTd8nwExXoEepXAUd0xhF2b3BevLHW6WS1KYHgCsFGX5A1e0zzYkgOX6FGlLylFy/wnAfypEIi6+Zm03NomgURXU68EuHOtEUGzZNUvntHHJ7Nznrga3rHvYT4kdPb+5ISJHmevbV5JhYWthACFn09sm18hn7QPrnMsoIroZG43h66uZhxRB3mOUkPZb56c1tySP4Koyr3fShToipKRxuOQWG46Phe/8UltG7xr2gg5ClYNBWh51++dGlMDsqgW4lpV+xf5GZ0VmzgNE6XvXbNECL7n5MfGuLd1Xh0ZfuumxsqEFr40Xjitt5nCwkH0+a+ndxsRwS/OuR5eggD79W65hcbLnzQ4TZ1bSVa9+Ni4Pio0EDqrAWu3/r7ZCyy5KzRWG9a+/xMWz6UPDwcB/qgK5VyUGgLsPLH+5NnC7nT+H9mSO0Qlr0GLNPnKE70ZPDFpigGYHgqOmTbDNRA4AO+/Z0BC63/tAWcXTjW51IX7j7fMKzyP/34D/SU/XwJ8ZUDyrlMyGA5oUCFBBT3vCKSOvrnHzs6V2nO9gOc=
