@@ -1,4 +1,3 @@
-from collections import OrderedDict
 from itertools import chain
 from enum import Enum
 from functools import partial
@@ -34,24 +33,23 @@ def default_serializer(
         package_stores = tuple(store[use_package] for use_package in using)
 
     if base_namespace and namespace != base_namespace:
-        preconverters = tuple(chain(
+        preconverters = chain(
             *(
-                chain(package_store.get(namespace, OrderedDict()).items(),
+                chain(package_store.get(namespace, {}).items(),
                       package_store["base"].items())
                 for package_store in package_stores
             )
-        ))
+        )
     else:
-        preconverters = tuple(chain(
+        preconverters = chain(
             *(store[base_namespace].items() for package_store in package_stores)
-        ))
+        )
 
     for kind, transformer in reversed(tuple(preconverters)):
         if isinstance(item, kind):
             return transformer(item)
 
     if hasattr(item, "__iter__"):
-        print("__iter___")
         return list(item)
 
     raise Unconvertable(item)
