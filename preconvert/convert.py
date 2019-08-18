@@ -52,7 +52,7 @@ def default_serializer(
             print(kind)
             print(type(item))
             if item == b'a':
-                print(reversed(tuple(preconverters)))
+                print(list(reversed(tuple(preconverters))))
             return transformer(item)
 
     if hasattr(item, "__iter__"):
