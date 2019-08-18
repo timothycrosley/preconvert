@@ -13,7 +13,7 @@ Have you ever tried to `json.dumps` a data structure, only to be surprised when 
 Preconvert was created to solve this problem across common serialization formats.
 
 
-Before Preconvert:
+Before preconvert:
 
 ```python
 import sys
