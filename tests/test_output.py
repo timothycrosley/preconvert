@@ -60,5 +60,5 @@ def test_json():
     crazy_object_json = preconvert.output.json.loads(preconvert.output.json.dumps(MyCrazyObject()))
     assert crazy_object_json == "Like anyone could convert this"
     assert preconvert.output.json.loads(
-        preconvert.output.json.dumps({"data": ["Τη γλώσσα μου έδωσαν ελληνική"]})
+        preconvert.output.json.dumps({"data": ["Τη γλώσσα μου έδωσαν ελληνική"]}, ensure_ascii=False)
     ) == {"data": ["Τη γλώσσα μου έδωσαν ελληνική"]}
