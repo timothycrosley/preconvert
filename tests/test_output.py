@@ -48,6 +48,7 @@ def test_json():
         "1234.25",
     ]
 
+    print(assert preconvert.output.json.loads(preconvert.output.json.dumps(b"a", ensure_ascii=True)))
     # assert preconvert.output.json.loads(preconvert.output.json.dumps(b"a", ensure_ascii=True)) == "a"
 
     class MyCrazyObject(object):
