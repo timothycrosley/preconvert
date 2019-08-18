@@ -63,7 +63,6 @@ def convert_namedtuple(instance: Any) -> Union[Dict, tuple]:
 
 @register.converter(bytes)
 def byte_converter(item):
-    print("Calling bytes converter")
     try:
         return item.decode("utf8")
     except UnicodeDecodeError:

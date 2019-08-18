@@ -48,15 +48,6 @@ def default_serializer(
 
     for kind, transformer in reversed(tuple(preconverters)):
         if isinstance(item, kind):
-            print("$$$$$$$$$ DEBUG $$$$$$$$$$")
-            print(transformer)
-            print(item)
-            print(kind)
-            print(type(item))
-            if item == b'a':
-                print(list(reversed(tuple(preconverters))))
-                print(list(reversed(tuple(store['preconvert']['base'].items()))))
-
             return transformer(item)
 
     if hasattr(item, "__iter__"):
