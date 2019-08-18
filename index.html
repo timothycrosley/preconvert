@@ -502,15 +502,15 @@ It accomplishes this by efficiently preconverting just the types the serializers
 serializers can understand. It then provides a mechanism for you to build custom preconverters, and preconvert_plugins that automatically take effect when installed via pip.</p>
 <h2 id="quickstart">Quickstart</h2>
 <ol>
-<li>Install preconvert using pip:</li>
-</ol>
-<div class="codehilite"><pre><span></span>pip3 install preconvert
+<li>
+<p>Install preconvert using pip:</p>
+<div class="codehilite"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">preconvert</span>
 </pre></div>
 
 
-<ol>
-<li>Replace existing json (or other serialization library) with preconvert equivalent:</li>
-</ol>
+</li>
+<li>
+<p>Replace existing json (or other serialization library) with preconvert equivalent:</p>
 <div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">preconvert.output</span> <span class="kn">import</span> <span class="n">simplejson</span> <span class="k">as</span> <span class="n">json</span>
 
 <span class="o">...</span>
@@ -519,8 +519,36 @@ serializers can understand. It then provides a mechanism for you to build custom
 </pre></div>
 
 
-<ol>
-<li>Enjoy a more comprehensive and configurable serializer!</li>
+</li>
+<li>
+<p>Define preconverters for any custom types, even if they aren't under your control:</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">from</span> <span class="nn">preconvert</span> <span class="kn">import</span> <span class="n">json</span>
+
+<span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">first_name</span> <span class="o">=</span> <span class="n">first_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span> <span class="o">=</span> <span class="n">last_name</span>
+
+    <span class="k">def</span> <span class="nf">__preconvert__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">first_name</span><span class="p">,</span> <span class="s1">&#39;last&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span><span class="p">}}</span>
+
+<span class="nd">@preconvert.converter</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">integer</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">numpy_integer_to_python_int</span><span class="p">(</span><span class="n">numpy_int</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">numpy_int</span><span class="p">)</span>
+
+<span class="n">json</span><span class="o">.</span><span class="kp">dumps</span><span class="p">({</span>
+    <span class="s1">&#39;employee&#39;</span><span class="p">:</span> <span class="n">Employee</span><span class="p">(</span><span class="s1">&#39;Timothy&#39;</span><span class="p">,</span> <span class="s1">&#39;Crosley&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;height_inches&#39;</span><span class="p">:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">int_</span><span class="p">(</span><span class="mi">73</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Enjoy a more comprehensive and configurable serializer!</p>
+</li>
 </ol>
 <h2 id="why">Why?</h2>
 <p>Have you ever tried to <code>json.dumps</code> a data structure, only to be surprised when your DataClass throws an exception, or your namedtuple outputs as a list?
