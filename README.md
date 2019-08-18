@@ -3,7 +3,7 @@
 
 [![PyPI version](https://badge.fury.io/py/preconvert.svg)](http://badge.fury.io/py/preconvert)
 
-Preconvert is a library that extends existing serializiers (json, simplejson, bson, msgpack, ..) to be capable of converting the types you use.
+Preconvert is a library that extends existing serializiers (json, simplejson, bson, msgpack, ..) to be capable of converting *all* the types you use.
 It accomplishes this by efficiently preconverting just the types the serializers aren't aware of (things like dataclasses and namedtuples) into basic built-in types that all
 serializers can understand. It then provides a mechanism for you to build custom preconverters, and preconvert_plugins that automatically take effect when installed via pip.
 
@@ -85,12 +85,6 @@ json.dumps(my_store_inventory)
 - Minimal overhead when utilized with common serialization formats
 
 ## How do I use this?
-
-1. Download
-
-`pip3 install preconvert`
-
-2. Utilize
 
 If your project uses one of our built-in supported serializers (json, msgpak, bson)
 you can simply replace your existing serializer import with a preconvert one:
