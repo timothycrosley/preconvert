@@ -1,8 +1,8 @@
 #!/bin/bash
 
-mypy --ignore-missing-imports preconvert/
-isort --check --diff --recursive preconvert/
-black --check -l 100 preconvert/
-flake8 --max-line 100 --ignore F403,F401
-safety check
-bandit -r preconvert
+pipenv run mypy --ignore-missing-imports preconvert/
+pipenv run isort --check --diff --recursive preconvert/
+pipenv run black --check -l 100 preconvert/
+pipenv run flake8 --max-line 100 --ignore F403,F401
+pipenv run safety check
+pipenv run bandit -r preconvert

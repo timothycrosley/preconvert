@@ -17,6 +17,7 @@ matrix:
     language: generic
 script:
 - bash test.sh
+before_deploy: flit build
 deploy:
   provider: pypi
   user: timothycrosley
