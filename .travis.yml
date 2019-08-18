@@ -2,7 +2,7 @@ dist: xenial
 language: python
 cache: pip
 install:
-- pip install pipenv
+- pip3 install pipenv
 - pipenv install
 matrix:
   include:
@@ -15,7 +15,6 @@ matrix:
     env: DEPLOY=yes
   - os: osx
     language: generic
-    python: 3.6
 script:
 - bash test.sh
 deploy:
