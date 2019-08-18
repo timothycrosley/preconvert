@@ -1,6 +1,4 @@
-[![Logo](https://raw.github.com/timothycrosley/preconvert/master/art/logo.png)](https://timothycrosley.github.io/preconvert/)
-
-preconvert
+[![preconvert - Supercharge Your Serializers](https://raw.github.com/timothycrosley/preconvert/master/art/logo_large.png)](https://timothycrosley.github.io/preconvert/)
 ===================
 
 [![PyPI version](https://badge.fury.io/py/preconvert.svg)](http://badge.fury.io/py/preconvert)
