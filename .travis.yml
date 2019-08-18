@@ -3,7 +3,7 @@ language: python
 cache: pip
 install:
 - pip3 install pipenv
-- pipenv install
+- pipenv --python 3 install
 matrix:
   include:
   - os: linux
