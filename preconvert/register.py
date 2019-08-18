@@ -1,11 +1,12 @@
 """This module handles the registration of preconverters"""
+from collections import OrderedDict
 from enum import Enum
 from functools import partial
 from typing import Any, Callable, Dict, Text, Union
 
 from preconvert.exceptions import ExistingConverter
 
-converters: Dict[Text, Dict[Text, Dict[Text, Callable]]] = {"preconvert": {"base": {}}}
+converters: Dict[Text, Dict[Text, Dict[Text, Callable]]] = {"preconvert": {"base": OrderedDict()}}
 
 
 class AutoPackage(Enum):
@@ -28,6 +29,8 @@ def converter(
 
        Returns the decorated function unchanged.
     """
+    package = store.setdefault(package, {})
+    scope = package.setdefault(scope, OrderedDict())
 
     def register_converter(function):
         nonlocal package
@@ -41,11 +44,11 @@ def converter(
 
         if not override:
             for kind in kinds:
-                if kind in store[package][scope]:
-                    raise ExistingConverter(kind, store[package][scope], function)
+                if kind in scope:
+                    raise ExistingConverter(kind, scope, function)
 
         for kind in kinds:  # we redo this loop simply to guard against partial application
-            store[package][scope][kind] = function
+            scope[kind] = function
 
         return function
 

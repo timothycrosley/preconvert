@@ -32,14 +32,6 @@ register.converter(Mapping)(dict)
 register.converter(Decimal, UUID)(str)
 
 
-@register.converter(bytes)
-def byte_converter(item):
-    try:
-        return item.decode("utf8")
-    except UnicodeDecodeError:
-        return base64.b64encode(item)
-
-
 @register.converter(date, datetime)
 def datetime_converter(item):
     return item.isoformat()
@@ -67,3 +59,11 @@ def convert_namedtuple(instance: Any) -> Union[Dict, tuple]:
         return instance._asdict()
 
     return instance
+
+
+@register.converter(bytes)
+def byte_converter(item):
+    try:
+        return item.decode("utf8")
+    except UnicodeDecodeError:
+        return base64.b64encode(item)
