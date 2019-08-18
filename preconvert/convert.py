@@ -53,7 +53,7 @@ def default_serializer(
             print(type(item))
             if item == b'a':
                 print(list(reversed(tuple(preconverters))))
-                print(list(reversed(tuple(store['preconvert']['base']))))
+                print(list(reversed(tuple(store['preconvert']['base'].items()))))
             return transformer(item)
 
     if hasattr(item, "__iter__"):
