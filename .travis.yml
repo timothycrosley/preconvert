@@ -2,19 +2,34 @@ dist: xenial
 language: python
 cache: pip
 install:
-  - 'pip install pipenv'
-  - 'pipenv sync'
+    - 'pip install pipenv'
+    - 'pipenv sync'
 include:
-  - os: linux
-    sudo: required
-    python: 3.5
-  - os: linux
-    sudo: required
-    python: 3.6
-  - os: linux
-    sudo: required
-    python: 3.7
-  - os: osx
-    language: generic
-    python: 3.7
+    - os: linux
+        sudo: required
+        python: 3.5
+    - os: linux
+        sudo: required
+        python: 3.6
+    - os: linux
+        sudo: required
+        python: 3.7
+    - os: osx
+        language: generic
+        python: 3.7
+script:
+    - bash test.sh
+
+
+deploy:
+  provider: pypi
+  user: timothycrosley
+  distributions: sdist bdist_wheel
+  skip_existing: true
+  on:
+    tags: false
+    branch: master
+    condition: "$TOXENV = py37"
+  password:
+    secure: SSFcjBL3dhWvSbo21icmnHQFV7mXfv/eDzxrefHUDMk37MWrvtNKchH8zz7wjAsf2PH1VYL1zkEFwnzuzHgs2aFCK7HDUwAaDSIcvPmJg9Oty+o2WQw16m7UnUac9MIZGmBHQaZuUTw0VJpm3GuPSXtdFJwFq3Tk3TIyUipEwg8=
 
