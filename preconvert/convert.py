@@ -1,4 +1,4 @@
-from collections import ChainMap
+from itertools import chain
 from enum import Enum
 from functools import partial
 from typing import Any, Callable, Dict, Iterable, Text, Union
@@ -33,16 +33,17 @@ def default_serializer(
         package_stores = tuple(store[use_package] for use_package in using)
 
     if base_namespace and namespace != base_namespace:
-        preconverters = ChainMap(
+        preconverters = chain(
             *(
-                ChainMap(package_store.get(namespace, {}), package_store["base"])
+                chain(package_store.get(namespace, {}).items(),
+                      package_store["base"].items())
                 for package_store in package_stores
             )
-        ).items()
+        )
     else:
-        preconverters = ChainMap(
-            *(store[base_namespace] for package_store in package_stores)
-        ).items()
+        preconverters = chain(
+            *(store[base_namespace].items() for package_store in package_stores)
+        )
 
     for kind, transformer in reversed(tuple(preconverters)):
         if isinstance(item, kind):

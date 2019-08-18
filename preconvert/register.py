@@ -29,11 +29,9 @@ def converter(
 
        Returns the decorated function unchanged.
     """
-    package = store.setdefault(package, {})
-    scope = package.setdefault(scope, OrderedDict())
-
     def register_converter(function):
         nonlocal package
+        nonlocal scope
 
         if package == AutoPackage.FUNCTION_OR_PRECONVERT:
             package = getattr(function, "__package__", None) or "preconvert"
@@ -41,6 +39,9 @@ def converter(
             package = function.__package__
         elif package == AutoPackage.PRECONVERT:
             package = "preconvert"
+
+        package = store.setdefault(package, {})
+        scope = package.setdefault(scope, OrderedDict())
 
         if not override:
             for kind in kinds:
