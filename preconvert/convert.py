@@ -1,4 +1,4 @@
-from collections import ChainMap
+from collections import ChainMap, OrderedDict
 from enum import Enum
 from functools import partial
 from typing import Any, Callable, Dict, Iterable, Text, Union
@@ -35,7 +35,7 @@ def default_serializer(
     if base_namespace and namespace != base_namespace:
         preconverters = ChainMap(
             *(
-                ChainMap(package_store.get(namespace, {}), package_store["base"])
+                ChainMap(package_store.get(namespace, OrderedDict()), package_store["base"])
                 for package_store in package_stores
             )
         ).items()
