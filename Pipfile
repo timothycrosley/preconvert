@@ -22,6 +22,7 @@ simplejson = "*"
 msgpack = "*"
 bson = "*"
 mkdocs-material = "*"
+pytest-coverage = "*"
 
 [requires]
 python_version = "3.7"

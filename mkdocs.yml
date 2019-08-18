@@ -10,13 +10,8 @@ theme:
 repo_name: timothycrosley/preconvert
 repo_url: https://github.com/timothycrosley/preconvert
 nav:
-    - Home: index.md
+    - preconvert: index.md
     - Changelog: CHANGELOG.md
-    - Acknowledgements: ACKNOWLEDGEMENTS.md
-    - Contributing:
-        - 'Contributing Guide': 'CONTRIBUTING.md'
-        - 'Coding Standard': 'CODING_STANDARD.md'
-        - 'Code of Conduct': 'CODE_OF_CONDUCT.md'
     - Reference:
         - Preconvert: 'preconvert/index.md'
         - Convert: 'preconvert/convert.md'
@@ -28,6 +23,11 @@ nav:
         - SimpleJSON: 'preconvert/output/simplejson.md'
         - MsgPack: 'preconvert/output/msgpack.md'
         - BSON: 'preconvert/output/bson.md'
+    - Contributing:
+        - 'Contributing Guide': 'CONTRIBUTING.md'
+        - 'Coding Standard': 'CODING_STANDARD.md'
+        - 'Code of Conduct': 'CODE_OF_CONDUCT.md'
+        - 'Acknowledgements': 'ACKNOWLEDGEMENTS.md'
 
 markdown_extensions:
   - admonition

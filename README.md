@@ -67,10 +67,24 @@ class InventoryItem:
         return self.unit_price * self.quantity_on_hand
 
 
-my_store_inventory = [InventoryItem("beer", unit_price=0.0, quantity_on_hand=sys.maxsize),  InventoryItem("bacon", unit_price=2.5, quantity_on_hand=3)]
+my_store_inventory = [
+    InventoryItem("beer", unit_price=0.0, quantity_on_hand=sys.maxsize),
+    InventoryItem("bacon", unit_price=2.5, quantity_on_hand=3)
+]
 json.dumps(my_store_inventory)
 
->>> '[{"name": "beer", "unit_price": 0.0, "quantity_on_hand": 9223372036854775807}, {"name": "bacon", "unit_price": 2.5, "quantity_on_hand": 3}]'
+>>> [
+        {
+            "name": "beer",
+            "unit_price": 0.0,
+            "quantity_on_hand": 9223372036854775807
+        },
+        {
+            "name": "bacon",
+            "unit_price": 2.5,
+            "quantity_on_hand": 3
+        }
+    ]
 
 :D
 ```
@@ -152,3 +166,6 @@ def convert_framework_object(instance):
 def convert_framework_object(instance):
     return ['name', instance.name]
 ```
+
+Finally, you can resister any modules that contain converters to package 'preconvert.converters' entrypoints, and they will take effect automatically as long as the package that contains them is installed.
+See the [preconvert_numpy](https://github.com/timothycrosley/preconvert_numpy/blob/master/pyproject.toml#L28) for an example of how this works.
