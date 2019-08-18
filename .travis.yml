@@ -23,6 +23,7 @@ deploy:
   user: timothycrosley
   distributions: sdist bdist_wheel
   skip_existing: true
+  skip_cleanup: true
   on:
     tags: false
     branch: master
