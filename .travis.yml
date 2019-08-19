@@ -17,6 +17,8 @@ matrix:
     language: generic
 script:
 - bash test.sh
+after_script:
+- bash <(curl -s https://codecov.io/bash)
 before_deploy: pipenv run flit build
 deploy:
   provider: pypi
