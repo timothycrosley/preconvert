@@ -143,14 +143,9 @@ json.dumps(my_store_inventory)
 
 ## Design goals:
 
-<<<<<<< HEAD
 - Easy utilization from existing projects
 - Enable conversion from complex to simple types independant of desired output format
 - Provide built in conversion for common types that are not universally supported (dataclasses, namedtuple, etc...)
-=======
-- Enable conversion from complex to simple types independent of desired output format
-- Provide built-in conversion for common types that are not universally supported (dataclasses, namedtuple, etc...)
->>>>>>> 31e62dbf18a895e72e201ca4c80a701e81d66dbf
 - Provide a way to build custom preconverts or override built-in preconverts
 - Ability to build preconverts that are dependent on the destination format
 - Minimal overhead when utilized with common serialization formats
