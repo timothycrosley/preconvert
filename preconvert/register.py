@@ -57,7 +57,7 @@ def converter(
     return register_converter
 
 
-always = convert  # Name alias to represent always converting for all serialization types.
+always = converter  # Name alias to represent always converting for all serialization types.
 json = partial(converter, scope="json")
 bson = partial(converter, scope="bson")
 msgpack = partial(converter, scope="msgpack")

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -xe
 
 wget https://raw.githubusercontent.com/hugapi/HOPE/master/all/HOPE-8--Style-Guide-for-Hug-Code.md -O docs/CODING_STANDARD.md
 wget https://raw.githubusercontent.com/hugapi/HOPE/master/all/HOPE-11-Code-of-Conduct.md -O docs/CODE_OF_CONDUCT.md

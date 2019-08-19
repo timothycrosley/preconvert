@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -xe
 
 pipenv run mypy --ignore-missing-imports preconvert/
 pipenv run isort --check --diff --recursive preconvert/
