@@ -47,7 +47,7 @@ serializers can understand. It then provides a mechanism for you to build custom
                 return {'name': {'first': self.first_name, 'last': self.last_name}}
 
 
-        @preconvert.converter(numpy.integer)
+        @preconvert.always(numpy.integer)
         def numpy_integer_to_python_int(numpy_int):
             return int(numpy_int)
 
@@ -192,13 +192,13 @@ class MyCustomClass(object):
         return {'first': self.first_name, 'children': children}
 ```
 
-For other entities, such as objects you do not control, you can register a new preconvert using the `preconvert.converter` decorator:
+For other entities, such as objects you do not control, you can register a new preconvert using the `preconvert.always` decorator:
 
 ```python
 import preconvert
 
 
-@preconvert.converter(SomeFrameworkObject)
+@preconvert.always(SomeFrameworkObject)
 def convert_framework_object(instance):
     return {'name': instance.name}
 ```
@@ -219,5 +219,5 @@ def convert_framework_object(instance):
     return ['name', instance.name]
 ```
 
-Finally, you can resister any modules that contain converters to package 'preconvert.converters' entrypoints, and they will take effect automatically as long as the package that contains them is installed.
+Finally, you can resister any modules that contain preconverters to package 'preconvert.converters' entrypoints, and they will take effect automatically as long as the package that contains them is installed.
 See the [preconvert_numpy](https://github.com/timothycrosley/preconvert_numpy/blob/master/pyproject.toml#L28) for an example of how this works.
