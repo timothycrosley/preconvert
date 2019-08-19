@@ -32,3 +32,9 @@ deploy:
     condition: "$DEPLOY = yes"
   password:
     secure: vsm9PYUJTVlARlc0AZcB12d3vypT3x+MBjXKGeakKPR6p6q2NKLlZrq4G4S4oMBN2PIYhRi60YZEjvgZyy2NRbaegYNSCYE7c1hQv4m5kf4XDl0qOONvAD0a+bQK6mmlY8dwexcBjNa++2kPmMdXYGq9Q9zStg9thsA4mOaPaX6iVzmgWGE76yzp6fi+VYsiOrwi62PgnJIVgJdpqegPMLD/5GhGGFKnJBavGs0iUkM992JUb+5gi/WlClmhXIL66KaG0wkIdMUq/qoOaCNyFaIR9XKTBsnc4st8R30D7WV7NEQJBNzfGApnGnM2c7d4/3a0bUG2RXyP+/YZLTbzOlfcrBqVLMbs4AaHol/zHysa3T0S8L2GfV7Gb5prG8V1/OgpmYSwJyPjrKs3a+UyVc2fFlJ4coSXsoM+VNgkO4PNW9fBkBkhuuq1apRbUanEBfw30gLwjPp5z/ZqJ9aUatmR2rZiYPcpWJz02EKzS8s0hYW5sLKUP8UWHTd/UvHlguz8yOIYhwNuhiWll9z5d7P/ZcuIZKHDnYSvqgeTDI+MTlBscznw26LfBr8+VZoj9kbQHZ4HhHq7ufR17DRU6yTr7TDpuTAxtxn8NRgsEyWgj239RBwLRAn5Fe5mKaGCRu91uKgipUlQgolYRfFLtBQdTmLMmuw3SgQH9dss+fM=
+after_deploy:
+    - git config user.name "Timothy Crosley";
+    - git config user.email "timothy.crosley@gmail.com"
+    - git remote add gh-token "https://${GH_TOKEN}@github.com/timothycrosley/preconvert.git";
+    - git fetch gh-token && git fetch gh-token gh-pages:gh-pages;
+    - bash update_docs.sh
