@@ -8,7 +8,7 @@ from preconvert.register import bson, converter, json, msgpack
 for plugin in pkg_resources.iter_entry_points("preconvert.converters"):
     plugin.load()
 
-__version__ = "0.0.3"
+__version__ = "0.0.4"
 __all__ = [
     "converter",
     "json",
