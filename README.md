@@ -2,6 +2,8 @@
 ===================
 
 [![PyPI version](https://badge.fury.io/py/preconvert.svg)](http://badge.fury.io/py/preconvert)
+[![Build Status](https://travis-ci.org/timothycrosley/preconvert.svg?branch=master)](https://travis-ci.org/timothycrosley/preconvert)
+[![Gitter](https://badges.gitter.im/preconvert/community.svg)](https://gitter.im/preconvert/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 Preconvert is a library that extends existing serializiers (json, simplejson, bson, msgpack, ..) to be capable of converting *all* the types you use.
 It accomplishes this by efficiently preconverting just the types the serializers aren't aware of (things like dataclasses and namedtuples) into basic built-in types that all
@@ -91,11 +93,11 @@ json.dumps(my_store_inventory)
 
 ## Design goals:
 
+- Easy utilization from existing projects
 - Enable conversion from complex to simple types independant of desired output format
 - Provide built in conversion for common types that are not universally supported (dataclasses, namedtuple, etc...)
 - Provide a way to build custom preconverts or override built-in preconverts
 - Ability to build preconverts that are dependent on the destination format
-- Easy utilization from existing projects
 - Minimal overhead when utilized with common serialization formats
 
 ## How do I use this?
