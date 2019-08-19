@@ -24,6 +24,7 @@ msgpack = "*"
 bson = "*"
 mkdocs-material = "*"
 pytest-coverage = "*"
+preconvert-numpy = "*"
 
 [pipenv]
 allow_prereleases = true
