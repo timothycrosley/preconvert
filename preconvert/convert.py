@@ -1,6 +1,6 @@
-from itertools import chain
 from enum import Enum
 from functools import partial
+from itertools import chain
 from typing import Any, Callable, Dict, Iterable, Text, Union
 
 from preconvert.exceptions import Unconvertable
@@ -35,15 +35,12 @@ def default_serializer(
     if base_namespace and namespace != base_namespace:
         preconverters = chain(
             *(
-                chain(package_store.get(namespace, {}).items(),
-                      package_store["base"].items())
+                chain(package_store.get(namespace, {}).items(), package_store["base"].items())
                 for package_store in package_stores
             )
         )
     else:
-        preconverters = chain(
-            *(store[base_namespace].items() for package_store in package_stores)
-        )
+        preconverters = chain(*(store[base_namespace].items() for package_store in package_stores))
 
     for kind, transformer in reversed(tuple(preconverters)):
         if isinstance(item, kind):

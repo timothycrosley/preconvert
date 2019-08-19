@@ -29,6 +29,7 @@ def converter(
 
        Returns the decorated function unchanged.
     """
+
     def register_converter(function):
         nonlocal package
         nonlocal scope
