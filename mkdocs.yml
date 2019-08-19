@@ -14,15 +14,15 @@ nav:
     - Changelog: CHANGELOG.md
     - Reference:
         - Preconvert: 'preconvert/index.md'
-        - Convert: 'preconvert/convert.md'
+        - Register: 'preconvert/register.md'
         - Converters: 'preconvert/converters.md'
         - Exceptions: 'preconvert/exceptions.md'
-        - Register: 'preconvert/register.md'
         - Output: 'preconvert/output/index.md'
-        - JSON: 'preconvert/output/json.md'
-        - SimpleJSON: 'preconvert/output/simplejson.md'
-        - MsgPack: 'preconvert/output/msgpack.md'
-        - BSON: 'preconvert/output/bson.md'
+        - 'Output - JSON': 'preconvert/output/json.md'
+        - 'Output - SimpleJSON': 'preconvert/output/simplejson.md'
+        - 'Output - MsgPack': 'preconvert/output/msgpack.md'
+        - 'Output - BSON': 'preconvert/output/bson.md'
+        - 'Output - Convert': 'preconvert/output/convert.md'
     - Contributing:
         - 'Contributing Guide': 'CONTRIBUTING.md'
         - 'Coding Standard': 'CODING_STANDARD.md'

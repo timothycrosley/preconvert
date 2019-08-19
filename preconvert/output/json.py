@@ -1,8 +1,8 @@
 import json
 from json import *
 
-from preconvert import convert
 from preconvert.converters import convert_namedtuple
+from preconvert.output import convert
 
 
 def dumps(content, *args, default=convert.json, **kwargs):  # type: ignore

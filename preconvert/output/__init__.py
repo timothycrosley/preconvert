@@ -4,10 +4,7 @@ Note: the interesting try: catch: pattern is done as their isn't a guarantee tha
 any of the given output formatters installed, which is required for preconvert to plug-in
 it's preconversion.
 """
-try:
-    from preconvert.output import json
-except ImportError:
-    pass
+from preconvert.output import convert, json
 
 try:
     from preconvert.output import bson

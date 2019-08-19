@@ -1,8 +1,8 @@
 """A Library to enable preconversion of any Python type into one that is easily serializable"""
 import pkg_resources
 
-from preconvert import convert, exceptions, output
-from preconvert.convert import default_serializer
+from preconvert import exceptions, output
+from preconvert.output.convert import default_serializer
 from preconvert.register import bson, converter, json, msgpack
 
 for plugin in pkg_resources.iter_entry_points("preconvert.converters"):
@@ -15,7 +15,6 @@ __all__ = [
     "bson",
     "msgpack",
     "exceptions",
-    "convert",
     "output",
     "default_serializer",
     "__version__",

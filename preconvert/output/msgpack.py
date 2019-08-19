@@ -1,8 +1,8 @@
 import msgpack
 from msgpack import *
 
-from preconvert import convert
 from preconvert.converters import convert_namedtuple
+from preconvert.output import convert
 
 
 def pack(content, *args, default=convert.msgpack, **kwargs):  # type: ignore
