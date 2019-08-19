@@ -1,4 +1,4 @@
 #!/bin/bash -xe
 
-pipenv run isort --recursive preconvert/
-pipenv run black preconvert/ -l 100
+pipenv run isort --recursive preconvert/ tests/
+pipenv run black preconvert/ tests/ -l 100

@@ -1,12 +1,14 @@
+import json
 import os
+from collections import namedtuple
 from datetime import datetime, timedelta
+from decimal import Decimal
 
 import pytest
 
 import preconvert
 from preconvert import converters
-from collections import namedtuple
-from decimal import Decimal
+
 from .constants import BASE_DIRECTORY
 
 
@@ -32,23 +34,19 @@ def test_json():
         pass
 
     data = NamedTupleObject("name", "value")
-    converted = preconvert.output.json.loads(preconvert.output.json.dumps(data))
+    converted = json.loads(preconvert.output.json.dumps(data))
     assert converted == {"name": "name", "value": "value"}
 
     data = set((1, 2, 3, 3))
-    assert preconvert.output.json.loads(preconvert.output.json.dumps(data)) == [1, 2, 3]
+    assert json.loads(preconvert.output.json.dumps(data)) == [1, 2, 3]
 
     data = (number for number in range(1, 4))
-    assert preconvert.output.json.loads(preconvert.output.json.dumps(data)) == [1, 2, 3]
+    assert json.loads(preconvert.output.json.dumps(data)) == [1, 2, 3]
 
     data = [Decimal(1.5), Decimal("155.23"), Decimal("1234.25")]
-    assert preconvert.output.json.loads(preconvert.output.json.dumps(data)) == [
-        "1.5",
-        "155.23",
-        "1234.25",
-    ]
+    assert json.loads(preconvert.output.json.dumps(data)) == ["1.5", "155.23", "1234.25"]
 
-    assert preconvert.output.json.loads(preconvert.output.json.dumps(b"a", ensure_ascii=True)) == "a"
+    assert json.loads(preconvert.output.json.dumps(b"a", ensure_ascii=True)) == "a"
 
     class MyCrazyObject(object):
         pass
@@ -57,9 +55,11 @@ def test_json():
     def convert(instance):
         return "Like anyone could convert this"
 
-    crazy_object_json = preconvert.output.json.loads(preconvert.output.json.dumps(MyCrazyObject()))
+    crazy_object_json = json.loads(preconvert.output.json.dumps(MyCrazyObject()))
     assert crazy_object_json == "Like anyone could convert this"
 
-    assert preconvert.output.json.loads(
-        preconvert.output.json.dumps({"data": ["Τη γλώσσα μου έδωσαν ελληνική"]}, ensure_ascii=False)
+    assert json.loads(
+        preconvert.output.json.dumps(
+            {"data": ["Τη γλώσσα μου έδωσαν ελληνική"]}, ensure_ascii=False
+        )
     ) == {"data": ["Τη γλώσσα μου έδωσαν ελληνική"]}
