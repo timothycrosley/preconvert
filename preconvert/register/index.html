@@ -277,42 +277,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../convert/" title="Convert" class="md-nav__link">
-      Convert
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../converters/" title="Converters" class="md-nav__link">
-      Converters
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../exceptions/" title="Exceptions" class="md-nav__link">
-      Exceptions
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -348,6 +312,13 @@
   
     <nav class="md-nav">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#always" title="always" class="md-nav__link">
+    always
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#converter" title="converter" class="md-nav__link">
@@ -412,6 +383,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../converters/" title="Converters" class="md-nav__link">
+      Converters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../exceptions/" title="Exceptions" class="md-nav__link">
+      Exceptions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../output/" title="Output" class="md-nav__link">
       Output
     </a>
@@ -424,8 +419,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../output/json/" title="JSON" class="md-nav__link">
-      JSON
+    <a href="../output/json/" title="Output - JSON" class="md-nav__link">
+      Output - JSON
     </a>
   </li>
 
@@ -436,8 +431,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../output/simplejson/" title="SimpleJSON" class="md-nav__link">
-      SimpleJSON
+    <a href="../output/simplejson/" title="Output - SimpleJSON" class="md-nav__link">
+      Output - SimpleJSON
     </a>
   </li>
 
@@ -448,8 +443,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../output/msgpack/" title="MsgPack" class="md-nav__link">
-      MsgPack
+    <a href="../output/msgpack/" title="Output - MsgPack" class="md-nav__link">
+      Output - MsgPack
     </a>
   </li>
 
@@ -460,8 +455,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../output/bson/" title="BSON" class="md-nav__link">
-      BSON
+    <a href="../output/bson/" title="Output - BSON" class="md-nav__link">
+      Output - BSON
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../output/convert/" title="Output - Convert" class="md-nav__link">
+      Output - Convert
     </a>
   </li>
 
@@ -572,6 +579,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#always" title="always" class="md-nav__link">
+    always
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#converter" title="converter" class="md-nav__link">
     converter
   </a>
@@ -639,11 +653,25 @@
                 <h1 id="module-preconvertregister">Module preconvert.register</h1>
 <p>This module handles the registration of preconverters</p>
 <h2 id="functions">Functions</h2>
+<h5 id="always">always</h5>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="err">(</span>
+    <span class="o">*</span><span class="n">kinds</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="n">scope</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;base&#39;</span><span class="p">,</span>
+    <span class="n">store</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Callable</span><span class="p">]]]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;preconvert&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;base&#39;</span><span class="p">:</span> <span class="n">OrderedDict</span><span class="p">([(</span><span class="n">typing</span><span class="o">.</span><span class="n">Collection</span><span class="p">,</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">list</span><span class="s1">&#39;&gt;), (&lt;class &#39;</span><span class="n">generator</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="nb">tuple</span><span class="s1">&#39;&gt;), (typing.Mapping, &lt;class &#39;</span><span class="nb">dict</span><span class="s1">&#39;&gt;), (&lt;class &#39;</span><span class="n">decimal</span><span class="o">.</span><span class="n">Decimal</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="nb">str</span><span class="s1">&#39;&gt;), (&lt;class &#39;</span><span class="n">uuid</span><span class="o">.</span><span class="n">UUID</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="nb">str</span><span class="s1">&#39;&gt;), (&lt;class &#39;</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="s1">&#39;&gt;, &lt;function datetime_converter at 0x7f8c54238158&gt;), (&lt;class &#39;</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="s1">&#39;&gt;, &lt;function datetime_converter at 0x7f8c54238158&gt;), (&lt;class &#39;</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="s1">&#39;&gt;, &lt;function time_delta_converter at 0x7f8c542381e0&gt;), (&lt;enum &#39;</span><span class="n">Enum</span><span class="s1">&#39;&gt;, &lt;function use_value_attribute at 0x7f8c54238268&gt;), (&lt;class &#39;</span><span class="n">typing</span><span class="o">.</span><span class="n">NamedTuple</span><span class="s1">&#39;&gt;, &lt;function convert_namedtuple at 0x7f8c55407268&gt;), (&lt;class &#39;</span><span class="nb">bytes</span><span class="s1">&#39;&gt;, &lt;function byte_converter at 0x7f8c54238400&gt;)])}},</span>
+    <span class="n">override</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">package</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">preconvert</span><span class="o">.</span><span class="n">register</span><span class="o">.</span><span class="n">AutoPackage</span><span class="p">]</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">AutoPackage</span><span class="o">.</span><span class="n">FUNCTION_OR_PRECONVERT</span><span class="p">:</span> <span class="mi">3</span><span class="o">&gt;</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span>
+</pre></div>
+
+
+<p>decorator that registers the wrapped function as a pre-converter for the provided types
+in the provided <code>store</code> data structure or a default global one.</p>
+<p>Returns the decorated function unchanged.</p>
 <h5 id="converter">converter</h5>
 <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="err">(</span>
     <span class="o">*</span><span class="n">kinds</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="n">scope</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;base&#39;</span><span class="p">,</span>
-    <span class="n">store</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Callable</span><span class="p">]]]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;preconvert&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;base&#39;</span><span class="p">:</span> <span class="n">OrderedDict</span><span class="p">([(</span><span class="n">typing</span><span class="o">.</span><span class="n">Collection</span><span class="p">,</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">list</span><span class="s1">&#39;&gt;), (&lt;class &#39;</span><span class="n">generator</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="nb">tuple</span><span class="s1">&#39;&gt;), (typing.Mapping, &lt;class &#39;</span><span class="nb">dict</span><span class="s1">&#39;&gt;), (&lt;class &#39;</span><span class="n">decimal</span><span class="o">.</span><span class="n">Decimal</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="nb">str</span><span class="s1">&#39;&gt;), (&lt;class &#39;</span><span class="n">uuid</span><span class="o">.</span><span class="n">UUID</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="nb">str</span><span class="s1">&#39;&gt;), (&lt;class &#39;</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="s1">&#39;&gt;, &lt;function datetime_converter at 0x7fcf03f3d158&gt;), (&lt;class &#39;</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="s1">&#39;&gt;, &lt;function datetime_converter at 0x7fcf03f3d158&gt;), (&lt;class &#39;</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="s1">&#39;&gt;, &lt;function time_delta_converter at 0x7fcf03f3d1e0&gt;), (&lt;enum &#39;</span><span class="n">Enum</span><span class="s1">&#39;&gt;, &lt;function use_value_attribute at 0x7fcf03f3d268&gt;), (&lt;class &#39;</span><span class="n">typing</span><span class="o">.</span><span class="n">NamedTuple</span><span class="s1">&#39;&gt;, &lt;function convert_namedtuple at 0x7fcf0510b268&gt;), (&lt;class &#39;</span><span class="nb">bytes</span><span class="s1">&#39;&gt;, &lt;function byte_converter at 0x7fcf03f3d400&gt;)])}},</span>
+    <span class="n">store</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Callable</span><span class="p">]]]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;preconvert&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;base&#39;</span><span class="p">:</span> <span class="n">OrderedDict</span><span class="p">([(</span><span class="n">typing</span><span class="o">.</span><span class="n">Collection</span><span class="p">,</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">list</span><span class="s1">&#39;&gt;), (&lt;class &#39;</span><span class="n">generator</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="nb">tuple</span><span class="s1">&#39;&gt;), (typing.Mapping, &lt;class &#39;</span><span class="nb">dict</span><span class="s1">&#39;&gt;), (&lt;class &#39;</span><span class="n">decimal</span><span class="o">.</span><span class="n">Decimal</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="nb">str</span><span class="s1">&#39;&gt;), (&lt;class &#39;</span><span class="n">uuid</span><span class="o">.</span><span class="n">UUID</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="nb">str</span><span class="s1">&#39;&gt;), (&lt;class &#39;</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="s1">&#39;&gt;, &lt;function datetime_converter at 0x7f8c54238158&gt;), (&lt;class &#39;</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="s1">&#39;&gt;, &lt;function datetime_converter at 0x7f8c54238158&gt;), (&lt;class &#39;</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="s1">&#39;&gt;, &lt;function time_delta_converter at 0x7f8c542381e0&gt;), (&lt;enum &#39;</span><span class="n">Enum</span><span class="s1">&#39;&gt;, &lt;function use_value_attribute at 0x7f8c54238268&gt;), (&lt;class &#39;</span><span class="n">typing</span><span class="o">.</span><span class="n">NamedTuple</span><span class="s1">&#39;&gt;, &lt;function convert_namedtuple at 0x7f8c55407268&gt;), (&lt;class &#39;</span><span class="nb">bytes</span><span class="s1">&#39;&gt;, &lt;function byte_converter at 0x7f8c54238400&gt;)])}},</span>
     <span class="n">override</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">package</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">preconvert</span><span class="o">.</span><span class="n">register</span><span class="o">.</span><span class="n">AutoPackage</span><span class="p">]</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">AutoPackage</span><span class="o">.</span><span class="n">FUNCTION_OR_PRECONVERT</span><span class="p">:</span> <span class="mi">3</span><span class="o">&gt;</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span>
@@ -700,7 +728,7 @@ PRECONVERT</code>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../exceptions/" title="Exceptions" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../" title="Preconvert" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -709,19 +737,19 @@ PRECONVERT</code>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Exceptions
+                Preconvert
               </span>
             </div>
           </a>
         
         
-          <a href="../output/" title="Output" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../converters/" title="Converters" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Output
+                Converters
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
