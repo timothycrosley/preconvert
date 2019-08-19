@@ -9,6 +9,48 @@ Preconvert is a library that extends existing serializiers (json, simplejson, bs
 It accomplishes this by efficiently preconverting just the types the serializers aren't aware of (things like dataclasses and namedtuples) into basic built-in types that all
 serializers can understand. It then provides a mechanism for you to build custom preconverters, and preconvert_plugins that automatically take effect when installed via pip.
 
+## Quickstart
+
+1. Install preconvert using pip:
+
+        pip3 install preconvert
+
+2. Replace existing json (or other serialization library) with preconvert equivalent:
+
+        from preconvert.output import simplejson as json
+
+        ...
+
+        json.dumps(MY_COMPLEX_OBJECT_WITH_DATA_CLASSSES)
+
+4. Define preconverters for any custom types, even if they aren't under your control:
+
+        import numpy
+        from preconvert import json
+
+
+        class Employee:
+
+            def __init__(self, first_name, last_name):
+                self.first_name = first_name
+                self.last_name = last_name
+
+            def __preconvert__(self):
+                return {'name': {'first': self.first_name, 'last': self.last_name}}
+
+
+        @preconvert.converter(numpy.integer)
+        def numpy_integer_to_python_int(numpy_int):
+            return int(numpy_int)
+
+
+        json.dumps({
+            'employee': Employee('Timothy', 'Crosley'),
+            'height_inches': numpy.int_(73)
+        })
+
+3. Enjoy a more comprehensive and configurable serializer!
+
 ## Why?
 
 Have you ever tried to `json.dumps` a data structure, only to be surprised when your DataClass throws an exception, or your namedtuple outputs as a list?
@@ -93,9 +135,14 @@ json.dumps(my_store_inventory)
 
 ## Design goals:
 
+<<<<<<< HEAD
 - Easy utilization from existing projects
 - Enable conversion from complex to simple types independant of desired output format
 - Provide built in conversion for common types that are not universally supported (dataclasses, namedtuple, etc...)
+=======
+- Enable conversion from complex to simple types independent of desired output format
+- Provide built-in conversion for common types that are not universally supported (dataclasses, namedtuple, etc...)
+>>>>>>> 31e62dbf18a895e72e201ca4c80a701e81d66dbf
 - Provide a way to build custom preconverts or override built-in preconverts
 - Ability to build preconverts that are dependent on the destination format
 - Minimal overhead when utilized with common serialization formats
@@ -130,7 +177,7 @@ my_serializer.dumps(default=preconvert.default_serializable)
 
 ## How do I extend this?
 
-Want to add preconversion to your own custom types? For OOP projects, one easy way to do this is to add a `__jsonifiable__` method to your object:
+Want to add preconversion to your own custom types? For OOP projects, one easy way to do this is to add a `__preconvert__` method to your object:
 
 ```python
 class MyCustomClass(object):
