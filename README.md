@@ -188,7 +188,7 @@ class MyCustomClass(object):
         self.first_name = first_name
         self.children = children
 
-    def __jsonifiable__(self)
+    def __preconvert__(self):
         return {'first': self.first_name, 'children': children}
 ```
 
