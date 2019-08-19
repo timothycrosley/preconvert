@@ -3,6 +3,7 @@
 
 [![PyPI version](https://badge.fury.io/py/preconvert.svg)](http://badge.fury.io/py/preconvert)
 [![Build Status](https://travis-ci.org/timothycrosley/preconvert.svg?branch=master)](https://travis-ci.org/timothycrosley/preconvert)
+[![codecov](https://codecov.io/gh/timothycrosley/preconvert/branch/master/graph/badge.svg)](https://codecov.io/gh/timothycrosley/preconvert)
 [![Gitter](https://badges.gitter.im/preconvert/community.svg)](https://gitter.im/preconvert/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 Preconvert is a library that extends existing serializiers (json, simplejson, bson, msgpack, ..) to be capable of converting *all* the types you use.
