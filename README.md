@@ -31,7 +31,7 @@ serializers can understand. It then provides a mechanism for you to build custom
 
         json.dumps(MY_COMPLEX_OBJECT_WITH_DATA_CLASSSES)
 
-4. Define preconverters for any custom types, even if they aren't under your control:
+3. Define preconverters for any custom types, even if they aren't under your control:
 
         import numpy
         from preconvert import json
@@ -57,7 +57,13 @@ serializers can understand. It then provides a mechanism for you to build custom
             'height_inches': numpy.int_(73)
         })
 
-3. Enjoy a more comprehensive and configurable serializer!
+4. Enjoy a more comprehensive and configurable serializer!
+
+!!! note
+    We use numpy integers as an example above.
+    However, you can get this functionality for free simply by installing the [preconvert_numpy extension](https://github.com/timothycrosley/preconvert_numpy): `pip install preconvert_numpy`.
+    Once you do this any call to `preconvert.output.json.dumps` will automatically convert these numpy objects to the appropriate type for you.
+
 
 ## Why?
 
