@@ -31,7 +31,7 @@ serializers can understand. It then provides a mechanism for you to build custom
 
         json.dumps(MY_COMPLEX_OBJECT_WITH_DATA_CLASSSES)
 
-3. Define preconverters for any custom types, even if they aren't under your control:
+3. If required, define preconverters for any custom types, even if they aren't under your control:
 
         import numpy
         from preconvert import json
@@ -59,11 +59,9 @@ serializers can understand. It then provides a mechanism for you to build custom
 
 4. Enjoy a more comprehensive and configurable serializer!
 
-!!! note
-    We use numpy integers as an example above.
-    However, you can get this functionality for free simply by installing the [preconvert_numpy extension](https://github.com/timothycrosley/preconvert_numpy): `pip install preconvert_numpy`.
-    Once you do this any call to `preconvert.output.json.dumps` will automatically convert these numpy objects to the appropriate type for you.
-
+**NOTE:** We use NumPy integers as an example above.
+However, you can get this functionality for free simply by installing the [preconvert_numpy extension](https://github.com/timothycrosley/preconvert_numpy): `pip install preconvert_numpy`.
+Once you do this any call to `preconvert.output.(json|msgpack|bson|simplejson).dumps` will automatically convert these NumPy objects to the appropriate type for you.
 
 ## Why?
 
@@ -146,6 +144,34 @@ json.dumps(my_store_inventory)
 
 :D
 ```
+
+## What Type Conversions are Included?
+
+preconvert aims to include preconverters for all the common standard library types that lead to conversion issues.
+Currently, the following types are handled out of the box when outputting via `preconvert.output.(json|msgpack|bson|simplejson).dumps`:
+
+    - `dataclasses`
+    - `datetime.datetime`
+    - `datetime.date`
+    - `datetime.timedelta`
+    - `bytes`
+    - `Collection`
+    - `GeneratorType`
+    - `Mapping`
+    - `Decimal`
+    - `Enum`
+    - `NamedTuple`
+
+See: [`preconvert.converters`](https://timothycrosley.github.io/preconvert/preconvert/converters/) for a complete and up-to-date reference.
+
+Additionally, plugins can be built for any set of objects that are commonly used, but extend beyond the stdlib:
+
+
+| Object Collections                        | Plugin                                                                   |
+| ------------------------------------------| -------------------------------------------------------------------------|
+| [NumPy](https://www.numpy.org/)           | [preconvert_numpy](https://github.com/timothycrosley/preconvert_numpy)   |
+
+Once a plugin is installed via pip its conversions will automatically take place when `preconvert.output.(json|msgpack|bson|simplejson).dumps` is called.
 
 ## Design goals:
 
