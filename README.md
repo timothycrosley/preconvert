@@ -147,7 +147,7 @@ json.dumps(my_store_inventory)
 
 ## What Type Conversions are Included?
 
-preconvert aims to include preconverters for all the common standard library types that lead to conversion issues.
+preconvert aims to include preconverters for all the common standard library types that lead to serialization exceptions.
 Currently, the following types are handled out of the box when outputting via `preconvert.output.(json|msgpack|bson|simplejson).dumps`:
 
     - `dataclasses`
