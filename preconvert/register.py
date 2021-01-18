@@ -6,9 +6,7 @@ from typing import Any, Callable, Dict, Text, Union
 
 from preconvert.exceptions import ExistingConverter
 
-converters: Dict[Text, Dict[Text, Dict[Text, Callable]]] = {
-    "preconvert": {"base": OrderedDict()}
-}
+converters: Dict[Text, Dict[Text, Dict[Text, Callable]]] = {"preconvert": {"base": OrderedDict()}}
 
 
 class AutoPackage(Enum):
@@ -51,9 +49,7 @@ def converter(
                 if kind in scope:
                     raise ExistingConverter(kind, scope, function)
 
-        for (
-            kind
-        ) in kinds:  # we redo this loop simply to guard against partial application
+        for kind in kinds:  # we redo this loop simply to guard against partial application
             scope[kind] = function
 
         return function
@@ -61,9 +57,7 @@ def converter(
     return register_converter
 
 
-always = (
-    converter  # Name alias to represent always converting for all serialization types.
-)
+always = converter  # Name alias to represent always converting for all serialization types.
 json = partial(converter, scope="json")
 bson = partial(converter, scope="bson")
 msgpack = partial(converter, scope="msgpack")

@@ -18,9 +18,7 @@ def default_serializer(
     item: Any,
     namespace: Text = "base",
     base_namespace: Text = "base",
-    using: Union[
-        Iterable[Text], PreconversionSource
-    ] = PreconversionSource.ALL_PACKAGES,
+    using: Union[Iterable[Text], PreconversionSource] = PreconversionSource.ALL_PACKAGES,
     store: Dict[Text, Dict[Text, Dict[Any, Callable]]] = converters,
 ):
     if hasattr(item, "__preconvert__"):
@@ -45,9 +43,7 @@ def default_serializer(
             )
         )
     else:
-        preconverters = chain(
-            *(store[base_namespace].items() for package_store in package_stores)
-        )
+        preconverters = chain(*(store[base_namespace].items() for package_store in package_stores))
 
     for kind, transformer in reversed(tuple(preconverters)):
         if isinstance(item, kind):
