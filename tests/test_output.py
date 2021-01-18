@@ -44,7 +44,11 @@ def test_json():
     assert json.loads(preconvert.output.json.dumps(data)) == [1, 2, 3]
 
     data = [Decimal(1.5), Decimal("155.23"), Decimal("1234.25")]
-    assert json.loads(preconvert.output.json.dumps(data)) == ["1.5", "155.23", "1234.25"]
+    assert json.loads(preconvert.output.json.dumps(data)) == [
+        "1.5",
+        "155.23",
+        "1234.25",
+    ]
 
     assert json.loads(preconvert.output.json.dumps(b"a", ensure_ascii=True)) == "a"
 

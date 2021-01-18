@@ -50,10 +50,10 @@ def use_value_attribute(item):
 @register.converter(NamedTuple)
 def convert_namedtuple(instance: Any) -> Union[Dict, tuple]:
     """Converts a tuple of type namedtuple to a dict.
-       This isn't registered as injecting this via registration won't work because it will never be
-       falling through to as tuples convert to list.
+    This isn't registered as injecting this via registration won't work because it will never be
+    falling through to as tuples convert to list.
 
-       if the tuple isn't a named one, it will return the tuple unchanged
+    if the tuple isn't a named one, it will return the tuple unchanged
     """
     if hasattr(instance, "_asdict"):
         return instance._asdict()

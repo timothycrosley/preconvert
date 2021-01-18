@@ -1,0 +1,16 @@
+{
+    "template": "https://github.com/timothycrosley/cookiecutter-python.git",
+    "commit": "ff6836bfaa247c65ff50b39c520ed12d91bf5a20",
+    "context": {
+        "cookiecutter": {
+            "full_name": "Timothy Crosley",
+            "email": "timothy.crosley@gmail.com",
+            "github_username": "timothycrosley",
+            "project_name": "preconvert",
+            "description": "A Library to enable preconversion of any Python type into one that is easily serializable",
+            "version": "0.0.6",
+            "_template": "https://github.com/timothycrosley/cookiecutter-python.git"
+        }
+    },
+    "directory": null
+}

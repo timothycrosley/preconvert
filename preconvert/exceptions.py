@@ -31,6 +31,7 @@ class Unconvertable(Error):
     def __init__(self, item):
         super().__init__(
             self,
-            "Object of type {} is not convertible " "into a serializable type".format(type(item)),
+            "Object of type {} is not convertible "
+            "into a serializable type".format(type(item)),
         )
         self.item = item
