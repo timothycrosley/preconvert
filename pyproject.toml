@@ -26,6 +26,7 @@ bson = "^0.5.10"
 mkdocs-material = "^6.2.5"
 pytest-coverage = "^0.0"
 preconvert_numpy = "^0.0.3"
+cruft = "^2.6.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
