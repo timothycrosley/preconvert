@@ -2,7 +2,8 @@
 ===================
 
 [![PyPI version](https://badge.fury.io/py/preconvert.svg)](http://badge.fury.io/py/preconvert)
-[![Build Status](https://travis-ci.org/timothycrosley/preconvert.svg?branch=master)](https://travis-ci.org/timothycrosley/preconvert)
+[![Test Status](https://github.com/timothycrosley/preconvert/workflows/Test/badge.svg?branch=develop)](https://github.com/timothycrosley/preconvert/actions?query=workflow%3ATest)
+[![Lint Status](https://github.com/timothycrosley/preconvert/workflows/Lint/badge.svg?branch=develop)](https://github.com/timothycrosley/preconvert/actions?query=workflow%3ALint)
 [![codecov](https://codecov.io/gh/timothycrosley/preconvert/branch/master/graph/badge.svg)](https://codecov.io/gh/timothycrosley/preconvert)
 [![Gitter](https://badges.gitter.im/preconvert/community.svg)](https://gitter.im/preconvert/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://pypi.python.org/pypi/hug/)
