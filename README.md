@@ -1,10 +1,10 @@
-[![preconvert - Supercharge Your Serializers](https://raw.github.com/timothycrosley/preconvert/master/art/logo_large.png)](https://timothycrosley.github.io/preconvert/)
+[![preconvert - Supercharge Your Serializers](https://raw.github.com/timothycrosley/preconvert/main/art/logo_large.png)](https://timothycrosley.github.io/preconvert/)
 ===================
 
 [![PyPI version](https://badge.fury.io/py/preconvert.svg)](http://badge.fury.io/py/preconvert)
-[![Test Status](https://github.com/timothycrosley/preconvert/workflows/Test/badge.svg?branch=develop)](https://github.com/timothycrosley/preconvert/actions?query=workflow%3ATest)
-[![Lint Status](https://github.com/timothycrosley/preconvert/workflows/Lint/badge.svg?branch=develop)](https://github.com/timothycrosley/preconvert/actions?query=workflow%3ALint)
-[![codecov](https://codecov.io/gh/timothycrosley/preconvert/branch/master/graph/badge.svg)](https://codecov.io/gh/timothycrosley/preconvert)
+[![Test Status](https://github.com/timothycrosley/preconvert/workflows/Test/badge.svg?branch=main)](https://github.com/timothycrosley/preconvert/actions?query=workflow%3ATest)
+[![Lint Status](https://github.com/timothycrosley/preconvert/workflows/Lint/badge.svg?branch=main)](https://github.com/timothycrosley/preconvert/actions?query=workflow%3ALint)
+[![codecov](https://codecov.io/gh/timothycrosley/preconvert/branch/main/graph/badge.svg)](https://codecov.io/gh/timothycrosley/preconvert)
 [![Gitter](https://badges.gitter.im/preconvert/community.svg)](https://gitter.im/preconvert/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://pypi.python.org/pypi/hug/)
 [![Downloads](https://pepy.tech/badge/preconvert)](https://pepy.tech/project/preconvert)
@@ -253,4 +253,4 @@ def convert_framework_object(instance):
 ```
 
 Finally, you can resister any modules that contain preconverters to package 'preconvert.converters' entrypoints, and they will take effect automatically as long as the package that contains them is installed.
-See the [preconvert_numpy](https://github.com/timothycrosley/preconvert_numpy/blob/master/pyproject.toml#L28) for an example of how this works.
+See the [preconvert_numpy](https://github.com/timothycrosley/preconvert_numpy/blob/main/pyproject.toml#L28) for an example of how this works.
